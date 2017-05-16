@@ -1,27 +1,34 @@
 <template>
-  <div class="border">
-    <div @mouseover="current = 'facebook'" @mouseout="current = 'none'" :class="{ active: current === 'facebook' }">
-      <img src="/static/img/facebook-pin.png" alt="Facebook Pin" class="pin-facebook">
-      <img src="/static/img/border-facebook.svg" alt="Facebook" class="border-facebook">
-    </div>
+  <section class="row mid-aligner">
+    <div class="border">
+      <div class="border-image-1"></div>
+      <div class="border-image-2"></div>
+      <div class="border-image-3"></div>
+      <div class="border-image-4"></div>
 
-    <div @mouseover="current = 'google'" @mouseout="current = 'none'" :class="{ active: current === 'google' }">
-      <img src="/static/img/google-pin.png" alt="Google Pin" class="pin-google">
-      <img src="/static/img/border-google.svg" alt="Google" class="border-google">
-    </div>
+      <div @mouseover="current = 'facebook'" @mouseout="current = 'none'" :class="{ active: current === 'facebook' }">
+        <img src="/static/img/facebook-pin.png" alt="Facebook Pin" class="pin-facebook">
+        <img src="/static/img/border-facebook.svg" alt="Facebook" class="border-facebook">
+      </div>
 
-    <div @mouseover="current = 'continue'" @mouseout="current = 'none'" :class="{ active: current === 'continue' }">
-      <img src="/static/img/continue-pin.png" alt="Continue Pin" class="pin-continue">
-      <img src="/static/img/border-continue.svg" alt="Continue" class="border-continue">
-    </div>
+      <div @mouseover="current = 'google'" @mouseout="current = 'none'" :class="{ active: current === 'google' }">
+        <img src="/static/img/google-pin.png" alt="Google Pin" class="pin-google">
+        <img src="/static/img/border-google.svg" alt="Google" class="border-google">
+      </div>
 
-    <div class="border-center mid-aligner">
-      <div style="text-align: center;">
-        <p>{{ titles.top }}</p>
-        <h2>{{ titles.bottom }}</h2>
+      <div @mouseover="current = 'continue'" @mouseout="current = 'none'" :class="{ active: current === 'continue' }">
+        <img src="/static/img/continue-pin.png" alt="Continue Pin" class="pin-continue">
+        <img src="/static/img/border-continue.svg" alt="Continue" class="border-continue">
+      </div>
+
+      <div class="border-center mid-aligner">
+        <div style="text-align: center;">
+          <p>{{ titles.top }}</p>
+          <h2>{{ titles.bottom }}</h2>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -47,6 +54,45 @@
 <style lang="scss" scoped>
   .border {
     position: relative;
+
+    &-image-1 {
+      position: absolute;
+      background-image: url('/static/img/bg1.svg');
+      width: 400px;
+      height: 400px;
+      top: -210px;
+      left: -210px;
+      opacity: 0.5;
+    }
+    &-image-2 {
+      position: absolute;
+      background-image: url('/static/img/bg1.svg');
+      width: 400px;
+      height: 400px;
+      top: -210px;
+      left: -210px;
+      transform: rotate(30deg);
+      opacity: 0.5;
+    }
+    &-image-3 {
+      position: absolute;
+      background-image: url('/static/img/bg1.svg');
+      width: 350px;
+      height: 350px;
+      top: -190px;
+      left: -190px;
+      opacity: 0.5;
+    }
+    &-image-4 {
+      position: absolute;
+      background-image: url('/static/img/bg1.svg');
+      width: 350px;
+      height: 350px;
+      top: -190px;
+      left: -190px;
+      transform: rotate(30deg);
+      opacity: 0.5;
+    }
 
     &-center {
       position: absolute;
@@ -132,5 +178,10 @@
       transition: all 150ms ease;
       cursor: pointer;
     }
+  }
+
+  section {
+    height: calc(100vh - 108px);
+    background: url('/static/img/bg4.svg') no-repeat center;
   }
 </style>
