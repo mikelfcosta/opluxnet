@@ -1,16 +1,27 @@
 <template>
-  <div>
-    <p>Você está vendo a página de Quiz, que conterá diversos componentes internos</p>
-    <router-link :to="{ name: 'QuizResult' }">Finalizar o Quiz</router-link>
-    <router-link :to="{ name: 'Home' }">Voltar para a Home</router-link>
-  </div>
+  <main class="container">
+    <orbs></orbs>
+    <view-header :first="{ route: 'Home', text: 'Login' }" name="Quiz"></view-header>
+    <section class="row mid-aligner">
+
+    </section>
+    <info-footer></info-footer>
+  </main>
 </template>
 
 <script>
+  import Orbs from '@/components/subcomponents/Orbs.vue'
+  import ViewHeader from '@/components/subcomponents/ViewHeader.vue'
+  import InfoFooter from '@/components/subcomponents/InfoFooter.vue'
   export default {
     name: 'Quiz',
     data () {
       return {}
+    },
+    components: {
+      Orbs,
+      ViewHeader,
+      InfoFooter
     }
   }
 </script>
