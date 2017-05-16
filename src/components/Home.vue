@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <p>Você está na Home</p>
     <router-link :to="{ name: 'Login' }">Ir para a página de Login</router-link>
     <router-link :to="{ name: 'Quiz' }">Realizar o Quiz</router-link>
