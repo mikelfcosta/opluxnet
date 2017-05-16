@@ -1,5 +1,5 @@
 <template>
-  <div class="container aligner" style="height: 100vh;">
+  <div class="container mid-aligner" style="height: 100vh;">
     <div class="row">
       <div class="col">
         <router-link :to="{ name: 'Home' }" tag="img" src="/static/img/logo.png" class="intro-button"></router-link>
@@ -58,11 +58,5 @@ export default {
     top: -145px;
     left: -120px;
     right: 0;
-  }
-
-  .aligner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 </style>
