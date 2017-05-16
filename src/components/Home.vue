@@ -33,25 +33,5 @@
 </script>
 
 <style lang="scss">
-  main {
-    position: relative;
-  }
 
-  section {
-    height: calc(100vh - 108px);
-    background: url('/static/img/bg4.svg') no-repeat center;
-    background-size: 65%;
-  }
-
-  aside {
-    border-right: 5px solid black;
-    font-family: 'Space Mono', monospace;
-    font-size: 28px;
-    padding: 50px 30px 50px 0;
-    position: absolute;
-    right: 0;
-    text-align: right;
-    top: 35%;
-    width: 200px;
-  }
 </style>
