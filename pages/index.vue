@@ -1,61 +1,80 @@
 <template>
-  <div class="container mid-aligner" style="height: 100vh;">
-    <div class="row">
-      <div class="col">
-        <nuxt-link :to="{ name: 'home' }" tag="img" src="/img/logo.png" class="intro-button"></nuxt-link>
-        <div class="bg1"></div>
-        <div class="bg2"></div>
-        <div class="bg3"></div>
-      </div>
-    </div>
+  <div class="mid-aligner countdown">
+    <img src="/logo.png" alt="op.LUXX.net">
+    <h1>Aguarde!</h1>
+    <p>{{ countdown }}</p>
   </div>
 </template>
 
 <script>
   export default {
+    created () {
+      let self = this
+      setInterval(function () {
+        console.log('updating ticker')
+        self.$data.now = new Date().getTime()
+      }, 1000)
+    },
     data () {
-      return {}
+      return {
+        now: new Date().getTime()
+      }
+    },
+    computed: {
+      countdown () {
+        const countDownDate = new Date(`May 29, 2017 12:00:00`).getTime()
+        let distance = countDownDate - this.now
+        let days = Math.floor(distance / (1000 * 60 * 60 * 24))
+        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000)
+        return `${days} dias ${hours} horas ${minutes} minutos ${seconds} segundos`
+      }
     }
   }
+
 </script>
 
-<style scoped>
-  .intro-button {
-    position: relative;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 100;
+<style>
+  @import "https://fonts.googleapis.com/css?family=Space+Mono";
+  html {
+    text-align: center;
+    min-height: 100%;
+    background: rgba(45, 200, 176, 1);
+    background: -moz-linear-gradient(top, rgba(45, 200, 176, 1) 0%, rgba(29, 53, 52, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(45, 200, 176, 1)), color-stop(100%, rgba(29, 53, 52, 1)));
+    background: -webkit-linear-gradient(top, rgba(45, 200, 176, 1) 0%, rgba(29, 53, 52, 1) 100%);
+    background: -o-linear-gradient(top, rgba(45, 200, 176, 1) 0%, rgba(29, 53, 52, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(45, 200, 176, 1) 0%, rgba(29, 53, 52, 1) 100%);
+    background: linear-gradient(to bottom, rgba(45, 200, 176, 1) 0%, rgba(29, 53, 52, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2dc8b0', endColorstr='#1d3534', GradientType=0);
   }
 
-  .bg1 {
-    background-image: url('/img/bg1.svg');
-    width: 632px;
-    height: 642px;
-    position: absolute;
-    top: -145px;
-    left: -120px;
-    right: 0;
-    z-index: 10;
+  img {
+    padding-top: 6%;
+    width: 383px;
   }
 
-  .bg2 {
-    background-image: url('/img/bg2.svg');
-    width: 632px;
-    height: 642px;
-    position: absolute;
-    top: -145px;
-    left: -120px;
-    right: 0;
-    z-index: 20;
+  .countdown {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    min-height: 80vh;
   }
 
-  .bg3 {
-    background-image: url('/img/bg3.svg');
-    width: 632px;
-    height: 642px;
-    position: absolute;
-    top: -145px;
-    left: -120px;
-    right: 0;
+  h1, p {
+    font-size: 3em;
+    font-family: 'Space Mono', monospace;
+    color: #FFF;
+    margin: 0;
+  }
+
+  p {
+    font-size: 2em;
+  }
+
+  body {
+    background-color: transparent;
   }
 </style>
