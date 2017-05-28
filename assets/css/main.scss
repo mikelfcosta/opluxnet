@@ -27,8 +27,10 @@ body {
     background-size: cover;
     background: url("/img/background-fhd.jpg") no-repeat center;
   }
-  @media only screen and (min-width: 800px) and (max-width: 1366px) {
+  @media only screen and (min-width: 768px) and (max-width: 1366px) {
     background-size: cover;
     background: url("/img/background-hd.jpg") no-repeat center;
   }
+
+  overflow: hidden;
 }

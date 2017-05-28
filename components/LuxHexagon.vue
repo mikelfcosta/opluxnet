@@ -1,12 +1,19 @@
 <template>
-  <div class="hexagon" :class="{ [type]: true, ['shadow-'+shadow]: true }" :style="{ width: width+'px', height: height+'px' }">
+  <div class="hexagon" :class="{ [type]: true, ['shadow-'+shadow]: true }"
+       :style="{ width: width+'px', height: height+'px' }" @click="changeState">
     <slot></slot>
   </div>
 </template>
 
 <script>
   export default {
-    props: ['type', 'shadow', 'width', 'height']
+    props: ['type', 'shadow', 'width', 'height', 'state'],
+    methods: {
+      changeState () {
+        if (!this.state) return null
+        return this.$router.push(this.state)
+      }
+    }
   }
 </script>
 
@@ -21,6 +28,16 @@
 
   .border {
     background: url("/img/hexagon-border.svg") no-repeat center;
+  }
+
+  .border-hover {
+    background: url("/img/hexagon-border.svg") no-repeat center;
+    transition: all 200ms ease;
+
+    &:hover {
+      background: url("/img/hexagon-flat.svg") no-repeat center;
+      background-size: contain;
+    }
   }
 
   .border-gray {

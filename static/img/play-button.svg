@@ -1,0 +1,18 @@
+<svg width="38" height="44" viewBox="0 0 38 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>play-button</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-574 -62)">
+<g id="play-button">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(574 62)" fill="#FFFFFF"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(574 79.8)" fill="#3391AA"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 37.8 21.8L 0 43.7L 0 0L 37.8 21.8Z"/>
+<path id="path1_fill" d="M 22.4 12.9L 0 25.9L 0 -7.62939e-07L 22.4 12.9Z"/>
+</defs>
+</svg>
