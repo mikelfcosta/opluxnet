@@ -10,8 +10,7 @@
   export default {
     created () {
       let self = this
-      setInterval(function () {
-        console.log('updating ticker')
+      setInterval(() => {
         self.$data.now = new Date().getTime()
       }, 1000)
     },
