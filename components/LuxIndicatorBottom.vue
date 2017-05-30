@@ -17,6 +17,17 @@
     height: 125px;
     border-left: 1px solid rgba(255, 255, 255, 0.6);
 
+    &.small {
+      right: -35px;
+      bottom: -50px;
+      height: 50px;
+
+      & > p {
+        font-size: 12px;
+        padding-left: 10px;
+      }
+    }
+
     & > span {
       position: absolute;
       bottom: -15px;

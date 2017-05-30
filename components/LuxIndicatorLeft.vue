@@ -16,6 +16,15 @@
     width: 130px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 
+    &.small {
+      width: 70px;
+      left: -80px;
+
+      & > p {
+        font-size: 12px;
+      }
+    }
+
     &.indicator-top {
       top: -10px;
     }

@@ -1,6 +1,7 @@
 <template>
   <div class="container mid-aligner" style="height: 100vh;">
     <lux-header :breadcrumbs="['home', '>', 'login', '>', 'quizz']"></lux-header>
+    <lux-login></lux-login>
     <div class="quiz-map mid-aligner">
       <div class="row row-top">
         <lux-hexagon class="mid-aligner" style="flex-direction: column;" type="faded-60" shadow="blurred" width="160" height="190">
@@ -63,6 +64,7 @@
   import LuxIndicatorRight from '~components/LuxIndicatorRight.vue'
   import LuxIndicatorLeft from '~components/LuxIndicatorLeft.vue'
   import LuxIndicatorBottom from '~components/LuxIndicatorBottom.vue'
+  import LuxLogin from '~components/LuxLogin.vue'
   export default {
     data () {
       return {
@@ -73,6 +75,7 @@
     },
     components: {
       LuxHeader,
+      LuxLogin,
       LuxHexagon,
       LuxFooter,
       LuxIndicatorLeft,
