@@ -1,15 +1,24 @@
 <template>
   <ul>
-    <li v-for="path in paths" v-if="path !== '>'">
+    <nuxt-link :to="state(path)" key="path" tag="li" t v-for="path in paths" v-if="path !== '>'">
       {{ path }}
-    </li>
+    </nuxt-link>
     <li v-else><i class="fa fa-caret-right" aria-hidden="true"></i></li>
   </ul>
 </template>
 
 <script>
+  import NuxtLink from '../.nuxt/components/nuxt-link'
   export default {
-    props: ['paths']
+    components: {NuxtLink},
+    props: ['paths'],
+    methods: {
+      state (path) {
+        if (path === 'home') return '/'
+        if (path === 'login') return path
+        if (path === 'quizz') return 'home'
+      }
+    }
   }
 </script>
 

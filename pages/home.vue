@@ -1,6 +1,6 @@
 <template>
   <div class="container" style="height: 100vh;">
-    <lux-header :breadcrumbs="['home', '>', 'login', '>', 'quiz']"></lux-header>
+    <lux-header :breadcrumbs="['home', '>', 'login', '>', 'quizz']"></lux-header>
     <div class="quiz-map mid-aligner">
       <div class="row row-top">
         <lux-hexagon class="mid-aligner" style="flex-direction: column;" type="faded-60" shadow="blurred" width="160" height="190">
