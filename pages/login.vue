@@ -25,17 +25,22 @@
         </div>
         <img src="/img/logout.png" alt="Continuar sem Login">
       </lux-hexagon>
+      <lux-footer></lux-footer>
     </div>
+
   </div>
 </template>
 
 <script>
   import LuxHeader from '~components/LuxHeader.vue'
   import LuxHexagon from '~components/LuxHexagon.vue'
+  import LuxFooter from '~components/LuxFooter.vue'
+
   export default {
     components: {
       LuxHeader,
-      LuxHexagon
+      LuxHexagon,
+      LuxFooter
     }
   }
 </script>
