@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Space+Mono');
+@import "variables";
 
 * {
   outline: none;
+  cursor: $cursor;
+}
+
+.pointer {
+  cursor: $pointer;
+  & > * {
+    cursor: $pointer;
+  }
 }
 
 .space-mono {
