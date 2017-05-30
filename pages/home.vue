@@ -8,14 +8,23 @@
           <h1>Quizz!</h1>
         </lux-hexagon>
         <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190">
+          <lux-indicator-right style="top: 15px;">
+            <p>1</p>
+          </lux-indicator-right>
           <h1>1</h1>
         </lux-hexagon>
       </div>
       <div class="row row-bot">
         <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190">
+          <lux-indicator-left style="bottom: 10px;">
+            <p>2</p>
+          </lux-indicator-left>
           <h1>2</h1>
         </lux-hexagon>
         <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190">
+          <lux-indicator-bottom style="right: -40px;">
+            <p>3</p>
+          </lux-indicator-bottom>
           <h1>3</h1>
         </lux-hexagon>
       </div>
@@ -28,11 +37,17 @@
   import LuxHeader from '~components/LuxHeader.vue'
   import LuxHexagon from '~components/LuxHexagon.vue'
   import LuxFooter from '~components/LuxFooter.vue'
+  import LuxIndicatorRight from '~components/LuxIndicatorRight.vue'
+  import LuxIndicatorLeft from '~components/LuxIndicatorLeft.vue'
+  import LuxIndicatorBottom from '~components/LuxIndicatorBottom.vue'
   export default {
     components: {
       LuxHeader,
       LuxHexagon,
-      LuxFooter
+      LuxFooter,
+      LuxIndicatorLeft,
+      LuxIndicatorRight,
+      LuxIndicatorBottom
     }
   }
 </script>
