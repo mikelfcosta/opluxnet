@@ -12,7 +12,9 @@
             <lux-indicator-right class="hexagon-question open-sans">
               <p class="margin-10">{{ answer }}</p>
             </lux-indicator-right>
-            {{ String.fromCharCode(65 + index) }}
+            <h1 class="hexagon-icon mid-aligner" @click="next(index)">
+              {{ String.fromCharCode(65 + index) }}
+            </h1>
           </lux-hexagon>
         </div>
       </div>
@@ -36,7 +38,16 @@
     data () {
       return {
         currentIndex: 0,
-        history: []
+        answeredList: []
+      }
+    },
+    methods: {
+      next (index) {
+        this.answeredList.push(index)
+
+        if (this.currentIndex + 1 === this.quiz.questions.length) {
+          console.log(this.answeredList)
+        } else this.currentIndex += 1
       }
     },
     computed: {
@@ -50,7 +61,7 @@
         return this.quiz.questions[this.currentIndex]
       },
       percentage () {
-        return this.currentIndex / this.quiz.questions.length
+        return (this.currentIndex / this.quiz.questions.length) * 100
       }
     }
   }
@@ -59,6 +70,14 @@
 <style lang="scss" scoped>
   .quiz {
     position: relative;
+  }
+
+  .hexagon-icon {
+    width: 58px;
+    height: 67px;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
   }
 
   .question {
