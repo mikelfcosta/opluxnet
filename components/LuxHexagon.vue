@@ -10,6 +10,8 @@
     props: ['type', 'shadow', 'width', 'height', 'state', 'action'],
     methods: {
       clickEvent () {
+        if (this.state === 'category') return this.$router.push(`/quizz/${this.action}`)
+        if (this.state === 'quiz') return this.$router.push(`/quizz/${this.action[0]}/${this.action[1]}`)
         if (this.state) return this.$router.push(this.state)
         if (this.action === 'facebook-login') return this.facebookLogin()
         if (this.action === 'google-login') return this.googleLogin()

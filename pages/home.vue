@@ -7,7 +7,8 @@
           <h2>Escolha seu</h2>
           <h1>Quizz!</h1>
         </lux-hexagon>
-        <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190">
+        <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190"
+                     state="category" action="nomes">
           <lux-indicator-right style="top: 15px;">
             <p>1</p>
           </lux-indicator-right>
@@ -15,13 +16,15 @@
         </lux-hexagon>
       </div>
       <div class="row row-bot">
-        <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190">
+        <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190"
+                     state="category" action="datas">
           <lux-indicator-left style="bottom: 10px;">
             <p>2</p>
           </lux-indicator-left>
           <h1>2</h1>
         </lux-hexagon>
-        <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190">
+        <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190"
+                     state="category" action="personalidades">
           <lux-indicator-bottom style="right: -40px;">
             <p>3</p>
           </lux-indicator-bottom>

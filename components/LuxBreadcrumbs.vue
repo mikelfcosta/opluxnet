@@ -15,8 +15,9 @@
     methods: {
       state (path) {
         if (path === 'home') return '/'
-        if (path === 'login') return path
-        if (path === 'quizz') return 'home'
+        if (path === 'login') return '/login'
+        if (path === 'quizz') return '/home'
+        else return '/'
       }
     }
   }
