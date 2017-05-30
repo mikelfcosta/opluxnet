@@ -6,7 +6,7 @@
     <lux-hexagon id="hexagon-a" class="mid-aligner" width="360" height="400" type="border" shadow="smaller">
     </lux-hexagon>
     <lux-hexagon id="hexagon-a" class="mid-aligner" style="cursor: pointer;"
-                 width="360" height="400" type="border-hover" state="home">
+                 width="360" height="400" type="border-hover" state="login">
       <h1>clique aqui</h1>
       <h2>para começarmos</h2>
       <span id="play-button"></span>

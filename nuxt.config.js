@@ -17,7 +17,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    { src: '~assets/css/main.scss', lang: 'scss' }
+    { src: '~assets/css/main.scss', lang: 'scss' },
+    { src: '~assets/css/font-awesome.scss', lang: 'scss' }
   ],
   plugins: ['~plugins/bootstrap-vue'],
   /*
