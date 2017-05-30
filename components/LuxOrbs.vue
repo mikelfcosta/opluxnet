@@ -15,7 +15,7 @@
         return [
           { state: 'login', active: this.$route.name === 'login' },
           { state: 'home', active: this.$route.name === 'home' },
-          { state: 'quiz', active: this.$route.name !== 'login' || this.$route.name !== 'home' }
+          { state: 'quiz', active: this.$route.name !== 'login' && this.$route.name !== 'home' }
         ]
       }
     }
