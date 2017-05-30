@@ -17,7 +17,9 @@
 
 <style lang="scss" scoped>
   header {
-    padding: 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
 
     img {
       width: 88px;

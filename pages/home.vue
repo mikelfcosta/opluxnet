@@ -1,5 +1,5 @@
 <template>
-  <div class="container" style="height: 100vh;">
+  <div class="container mid-aligner" style="height: 100vh;">
     <lux-header :breadcrumbs="['home', '>', 'login', '>', 'quizz']"></lux-header>
     <div class="quiz-map mid-aligner">
       <div class="row row-top">
@@ -7,11 +7,17 @@
           <h2>Escolha seu</h2>
           <h1>Quizz!</h1>
         </lux-hexagon>
-        <lux-hexagon type="faded" shadow="blurred" width="160" height="190"></lux-hexagon>
+        <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190">
+          <h1>1</h1>
+        </lux-hexagon>
       </div>
       <div class="row row-bot">
-        <lux-hexagon type="faded" shadow="blurred" width="160" height="190"></lux-hexagon>
-        <lux-hexagon type="faded" shadow="blurred" width="160" height="190"></lux-hexagon>
+        <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190">
+          <h1>2</h1>
+        </lux-hexagon>
+        <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190">
+          <h1>3</h1>
+        </lux-hexagon>
       </div>
     </div>
     <lux-footer></lux-footer>
@@ -45,7 +51,7 @@
 
     &-bot {
       top: -30px;
-      right: -90px;
+      right: -87px;
     }
   }
 

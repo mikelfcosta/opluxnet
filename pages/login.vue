@@ -1,5 +1,5 @@
 <template>
-  <div class="container" style="height: 100vh;">
+  <div class="container mid-aligner" style="height: 100vh;">
     <lux-header :breadcrumbs="['home', '>', 'login']"></lux-header>
     <div class="mid-aligner login-container">
       <lux-hexagon width="150" height="176" type="image" shadow="blurred" class="login-hexagon" v-if="avatarImage"
@@ -11,36 +11,32 @@
       <div class="login-options">
         <lux-hexagon width="105" height="123" :type="provider === 'facebook' ? 'flat-blue' : 'flat'" shadow="blurred" class="mid-aligner login-hexagon"
                      action="facebook-login" :state="provider === 'facebook' ? 'home' : false">
-          <div class="horizontal-indicator facebook">
-            <span></span>
-            <p v-if="provider === 'facebook'">logado</p>
-            <p v-else>login</p>
-          </div>
+         <lux-indicator-left class="indicator-top">
+           <p v-if="provider === 'facebook'">logado</p>
+           <p v-else>login</p>
+         </lux-indicator-left>
           <img src="/img/facebook-logo-white.png" alt="Login Facebook" v-if="provider === 'facebook'">
           <img src="/img/facebook-logo.png" alt="Login Facebook" v-else>
         </lux-hexagon>
         <lux-hexagon width="105" height="123" :type="provider === 'google' ? 'flat-red' : 'flat'" shadow="blurred" class="mid-aligner login-hexagon"
                      action="google-login" :state="provider === 'google' ? 'home' : false">
-          <div class="vertical-indicator">
-            <span></span>
+          <lux-indicator-bottom>
             <p v-if="provider === 'google'">logado</p>
             <p v-else>login</p>
-          </div>
+          </lux-indicator-bottom>
           <img src="/img/google-logo-white.png" alt="Login Google" v-if="provider === 'google'">
           <img src="/img/google-logo.png" alt="Login Google" v-else>
         </lux-hexagon>
       </div>
       <lux-hexagon width="61" height="72" type="flat" shadow="blurred" class="mid-aligner login-hexagon" state="home"
       v-if="provider === 'none'">
-        <div class="horizontal-indicator continue">
-          <span></span>
-          <p>continuar sem login</p>
-        </div>
+        <lux-indicator-left class="indicator-bottom">
+          <p style="font-size: 22px; line-height: 26px; margin-bottom: 10px;">continuar sem login</p>
+        </lux-indicator-left>
         <img src="/img/logout.png" alt="Continuar sem Login">
       </lux-hexagon>
       <lux-footer></lux-footer>
     </div>
-
   </div>
 </template>
 
@@ -48,6 +44,8 @@
   import LuxHeader from '~components/LuxHeader.vue'
   import LuxHexagon from '~components/LuxHexagon.vue'
   import LuxFooter from '~components/LuxFooter.vue'
+  import LuxIndicatorLeft from '~components/LuxIndicatorLeft.vue'
+  import LuxIndicatorBottom from '~components/LuxIndicatorBottom.vue'
   import axios from 'axios'
 
   export default {
@@ -74,84 +72,15 @@
     components: {
       LuxHeader,
       LuxHexagon,
-      LuxFooter
+      LuxFooter,
+      LuxIndicatorLeft,
+      LuxIndicatorBottom
     }
   }
 </script>
 
 <style lang="scss" scoped>
   @import 'assets/css/variables.scss';
-
-  .vertical-indicator {
-    position: absolute;
-    right: -80px;
-    bottom: -135px;
-    height: 150px;
-    border-left: 1px solid rgba(255, 255, 255, 0.6);
-
-    & > span {
-      position: absolute;
-      bottom: -15px;
-      left: -8px;
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      display: block;
-      background-color: rgba(255, 255, 255, 0.6);
-    }
-
-    & > p {
-      padding-left: 30px;
-      padding-top: 10px;
-      color: white;
-      font-family: "Open Sans", sans-serif;
-      font-size: 24px;
-      margin: 0;
-    }
-
-  }
-
-  .horizontal-indicator {
-    position: absolute;
-    left: -140px;
-    width: 130px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-
-    &.facebook {
-      top: -10px;
-    }
-
-    &.continue {
-      top: 10px;
-      width: 170px;
-      left: -180px;
-
-      & > p {
-        font-size: 22px;
-        line-height: 26px;
-        margin-bottom: 10px;
-      }
-    }
-
-    & > span {
-      position: absolute;
-      bottom: -8px;
-      left: -15px;
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      display: block;
-      background-color: rgba(255, 255, 255, 0.6);
-    }
-
-    & > p {
-      padding-left: 30px;
-      color: white;
-      font-family: "Open Sans", sans-serif;
-      font-size: 24px;
-      margin: 0;
-    }
-  }
 
   .login-container {
     flex-direction: column;
