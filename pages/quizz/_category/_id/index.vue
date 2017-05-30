@@ -2,6 +2,7 @@
   <div class="container mid-aligner" style="height: 100vh">
     <lux-header :breadcrumbs="['home', '>', 'login', '>', 'quizz', '>', this.$route.params.category, '>', this.quiz.link]">
     </lux-header>
+    <lux-login></lux-login>
     <div class="quiz" v-if="!end">
       <!--<lux-hexagon width="394" height="462" type="flat" shadow="blurred"></lux-hexagon>-->
       <div class="question open-sans">
@@ -33,12 +34,14 @@
   import LuxHeader from '~components/LuxHeader.vue'
   import LuxIndicatorRight from '~components/LuxIndicatorRight.vue'
   import LuxQuizProgress from '~components/LuxQuizProgress.vue'
+  import LuxLogin from '~components/LuxLogin.vue'
   import { mapMutations } from 'vuex'
   export default {
     components: {
       LuxHexagon,
       LuxHeader,
       LuxIndicatorRight,
+      LuxLogin,
       LuxQuizProgress
     },
     data () {

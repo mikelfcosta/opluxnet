@@ -1,6 +1,7 @@
 <template>
   <div class="container mid-aligner" style="height: 100vh">
     <lux-header :breadcrumbs="['home', '>', 'login', '>', 'quizz', '>', this.$route.params.category]"></lux-header>
+    <lux-login></lux-login>
     <div class="mid-aligner category">
       <lux-hexagon class="mid-aligner" width="260" height="305" type="flat" shadow="blurred">
 
@@ -29,6 +30,7 @@
   import LuxHeader from '~components/LuxHeader.vue'
   import LuxFooter from '~components/LuxFooter.vue'
   import LuxIndicatorRight from '~components/LuxIndicatorRight.vue'
+  import LuxLogin from '~components/LuxLogin.vue'
   export default {
     validate ({ params }) {
       if (params.category === 'nomes' || params.category === 'datas' || params.category === 'personalidades') {
@@ -57,6 +59,7 @@
       LuxHeader,
       LuxHexagon,
       LuxFooter,
+      LuxLogin,
       LuxIndicatorRight
     }
   }
