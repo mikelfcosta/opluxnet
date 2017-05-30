@@ -29,8 +29,15 @@
   }
 
   .flat {
-    background-color: #fff;
     background: url("/img/hexagon-flat.svg") no-repeat center;
+  }
+
+  .faded {
+    background: url("/img/hexagon-faded.svg") no-repeat center;
+
+    &-60 {
+      background: url("/img/hexagon-faded-60.svg") no-repeat center;
+    }
   }
 
   .image {
@@ -61,10 +68,10 @@
   }
 
   .shadow-blurred {
-    filter: drop-shadow( 0 0 20px rgba(0,0,0,0.2) )
+    filter: drop-shadow( 0 0 20px rgba(0,0,0,0.2) );
   }
 
   .shadow-smaller {
-    filter: drop-shadow( 0 0 10px rgba(0,0,0,0.3) )
+    filter: drop-shadow( 0 0 10px rgba(0,0,0,0.3) );
   }
 </style>

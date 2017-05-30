@@ -19,7 +19,7 @@
           <img src="/img/google-logo.png" alt="Login Google">
         </lux-hexagon>
       </div>
-      <lux-hexagon width="61" height="72" type="flat" shadow="blurred" class="mid-aligner login-hexagon">
+      <lux-hexagon width="61" height="72" type="flat" shadow="blurred" class="mid-aligner login-hexagon" state="home">
         <div class="horizontal-indicator continue">
           <span></span><p>continuar sem login</p>
         </div>
