@@ -149,10 +149,29 @@ export const state = {
 }
 
 export const mutations = {
-  setAsDone (category, quiz) {
-    const toBeSet = state.quiz[category].quizzes.filter(q => q.id === quiz)[0]
+  setAsDone (state, payload) {
+    const { category, id } = payload
+    const toBeSet = state.quiz.filter(q => q.name === category)[0].quizzes.filter(q => q.link === id)[0]
     toBeSet.done = true
   }
 }
 
 export const actions = {}
+
+export const getters = {
+  getCompletionPercentage (state) {
+    let totalQuiz = state.quiz.reduce((acc, val) => {
+      acc += val.quizzes.length
+      return acc
+    }, 0)
+    let completedQuiz = state.quiz.reduce((acc, val) => {
+      let count = 0
+      val.quizzes.forEach(q => {
+        if (q.done) count++
+      })
+      acc += count
+      return acc
+    }, 0)
+    return Math.ceil((completedQuiz / totalQuiz) * 100)
+  }
+}

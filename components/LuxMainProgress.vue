@@ -1,12 +1,17 @@
 <template>
   <div class="progress">
-    <div class="progress-bar" role="progressbar" style="width: 25%"></div>
-    <div class="progress-text">25%</div>
+    <div class="progress-bar" role="progressbar" :style="{ width: percentage + '%' }"></div>
+    <div class="progress-text">{{ percentage }}%</div>
   </div>
 </template>
 
 <script>
-  export default {}
+  import { mapGetters } from 'vuex'
+  export default {
+    computed: {
+      ...mapGetters({ percentage: 'getCompletionPercentage' })
+    }
+  }
 </script>
 
 <style lang="scss" scoped>

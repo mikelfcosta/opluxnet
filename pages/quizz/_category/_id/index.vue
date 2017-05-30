@@ -65,7 +65,7 @@
           arr.filter(v => v === a).length - arr.filter(v => v === b).length
         ).pop()
         this.result = this.quiz.results[result]
-        this.setAsDone(this.$route.params.category, this.$route.params.id)
+        this.setAsDone(this.$route.params)
       },
       ...mapMutations({
         setAsDone: 'setAsDone'
