@@ -13,8 +13,8 @@
   .vertical-indicator {
     position: absolute;
     right: -80px;
-    bottom: -135px;
-    height: 150px;
+    bottom: -95px;
+    height: 125px;
     border-left: 1px solid rgba(255, 255, 255, 0.6);
 
     & > span {

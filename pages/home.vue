@@ -7,12 +7,18 @@
           <h2>Escolha seu</h2>
           <h1>Quizz!</h1>
         </lux-hexagon>
-        <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190"
+        <lux-hexagon type="faded" shadow="blurred" width="160" height="190"
                      state="category" action="nomes">
           <lux-indicator-right style="top: 15px;">
             <p>1</p>
           </lux-indicator-right>
-          <h1>1</h1>
+          <div style="width: 160px; height: 190px" class="mid-aligner"
+               @mouseenter="icoNames = true" @mouseleave="icoNames = false">
+            <transition name="fade" mode="out-in">
+              <h3 v-if="icoNames">Nomes</h3>
+              <img src="img/ico-names.svg" class="category-icon" alt="Nomes" v-else>
+            </transition>
+          </div>
         </lux-hexagon>
       </div>
       <div class="row row-bot">
@@ -21,14 +27,28 @@
           <lux-indicator-left style="bottom: 10px;">
             <p>2</p>
           </lux-indicator-left>
-          <h1>2</h1>
+          <div style="width: 160px; height: 190px" class="mid-aligner"
+               @mouseenter="icoDates = true" @mouseleave="icoDates = false">
+            <transition name="fade" mode="out-in">
+              <h3 v-if="icoDates">Datas</h3>
+              <img src="img/ico-dates.svg" class="category-icon" alt="Datas" v-else>
+            </transition>
+          </div>
+
         </lux-hexagon>
         <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190"
                      state="category" action="personalidades">
           <lux-indicator-bottom style="right: -40px;">
             <p>3</p>
           </lux-indicator-bottom>
-          <h1>3</h1>
+          <div style="width: 160px; height: 190px" class="mid-aligner"
+               @mouseenter="icoPersonality = true" @mouseleave="icoPersonality = false">
+            <transition name="fade" mode="out-in">
+              <h3 v-if="icoPersonality">Pessoal</h3>
+              <img src="img/ico-personality.svg" class="category-icon" alt="Personalidade" v-else>
+            </transition>
+          </div>
+
         </lux-hexagon>
       </div>
     </div>
@@ -44,6 +64,13 @@
   import LuxIndicatorLeft from '~components/LuxIndicatorLeft.vue'
   import LuxIndicatorBottom from '~components/LuxIndicatorBottom.vue'
   export default {
+    data () {
+      return {
+        icoNames: false,
+        icoDates: false,
+        icoPersonality: false
+      }
+    },
     components: {
       LuxHeader,
       LuxHexagon,
@@ -93,4 +120,23 @@
     }
   }
 
+  .category-icon {
+    height: 85px;
+  }
+
+  h3 {
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 28px;
+    margin-top: 10px;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .1s ease;
+  }
+  .fade-enter, .fade-leave-to{
+    opacity: 0;
+  }
 </style>
