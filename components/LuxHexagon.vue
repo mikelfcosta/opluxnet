@@ -1,6 +1,6 @@
 <template>
   <div class="hexagon" :class="{ [type]: true, ['shadow-'+shadow]: true }"
-       :style="{ width: width+'px', height: height+'px' }" @click="changeState">
+       :style="{ width: width+'px', height: height+'px', background }" @click="changeState">
     <slot></slot>
   </div>
 </template>
@@ -13,6 +13,12 @@
         if (!this.state) return null
         return this.$router.push(this.state)
       }
+    },
+    computed: {
+      background () {
+        if (this.type === 'image') return 'url(userimage.jpg) no-repeat center'
+        else return false
+      }
     }
   }
 </script>
@@ -23,7 +29,12 @@
   }
 
   .flat {
+    background-color: #fff;
     background: url("/img/hexagon-flat.svg") no-repeat center;
+  }
+
+  .image {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   }
 
   .border {
