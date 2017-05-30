@@ -15,8 +15,9 @@
     methods: {
       state (path) {
         if (path === 'home') return '/'
-        if (path === 'login') return '/login'
-        if (path === 'quizz') return '/home'
+        else if (path === 'login') return '/login'
+        else if (path === 'quizz') return '/home'
+        else if (path === 'nomes' || path === 'datas' || path === 'personalidade') return `/quizz/${path}`
         else return '/'
       }
     }

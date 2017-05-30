@@ -12,7 +12,7 @@
           <lux-indicator-right style="top: 15px;">
             <p>1</p>
           </lux-indicator-right>
-          <div style="width: 160px; height: 190px" class="mid-aligner"
+          <div class="category-button mid-aligner"
                @mouseenter="icoNames = true" @mouseleave="icoNames = false">
             <transition name="fade" mode="out-in">
               <h3 v-if="icoNames">Nomes</h3>
@@ -27,7 +27,7 @@
           <lux-indicator-left style="bottom: 10px;">
             <p>2</p>
           </lux-indicator-left>
-          <div style="width: 160px; height: 190px" class="mid-aligner"
+          <div class="category-button mid-aligner"
                @mouseenter="icoDates = true" @mouseleave="icoDates = false">
             <transition name="fade" mode="out-in">
               <h3 v-if="icoDates">Datas</h3>
@@ -41,7 +41,7 @@
           <lux-indicator-bottom style="right: -40px;">
             <p>3</p>
           </lux-indicator-bottom>
-          <div style="width: 160px; height: 190px" class="mid-aligner"
+          <div class="category-button mid-aligner"
                @mouseenter="icoPersonality = true" @mouseleave="icoPersonality = false">
             <transition name="fade" mode="out-in">
               <h3 v-if="icoPersonality">Pessoal</h3>
@@ -83,6 +83,18 @@
 </script>
 
 <style lang="scss" scoped>
+  @import 'assets/css/variables.scss';
+
+  .category-button {
+    width: 160px;
+    height: 190px;
+    cursor: $pointer;
+
+    & > * {
+      cursor: $pointer;
+    }
+  }
+
   .quiz-map {
     flex-direction: column;
   }
@@ -131,6 +143,10 @@
     text-transform: uppercase;
     font-size: 28px;
     margin-top: 10px;
+  }
+
+  .cursor {
+    cursor: $pointer;
   }
 
   .fade-enter-active, .fade-leave-active {

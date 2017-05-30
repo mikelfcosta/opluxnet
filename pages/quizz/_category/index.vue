@@ -7,7 +7,7 @@
       </lux-hexagon>
       <div class="subcategory">
         <lux-hexagon v-for="quiz in category.quizzes" key="quiz.id" class="subcategory-hexagon"
-                     type="faded" shadow="blurred" width="109" height="125" state="quiz"
+                     :type="quiz.done ? 'flat' : 'faded'" shadow="blurred" width="109" height="125" state="quiz"
                      :action="[category.name, quiz.link]">
           <lux-indicator-right style="top: 25px;">
             <p>{{ quiz.id }}</p>

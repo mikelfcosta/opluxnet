@@ -1,5 +1,5 @@
 <template>
-  <div class="hexagon" :class="{ [type]: true, ['shadow-'+shadow]: true }"
+  <div class="hexagon" :class="{ [type]: true, ['shadow-'+shadow]: true, cursor: this.state || this.action }"
        :style="{ width: width+'px', height: height+'px', background }" @click="clickEvent">
     <slot></slot>
   </div>
@@ -33,6 +33,15 @@
 </script>
 
 <style lang="scss">
+  @import 'assets/css/variables.scss';
+
+  .cursor {
+    cursor: $pointer;
+    & > * {
+      cursor: $pointer;
+    }
+  }
+
   .shaded {
     background: url("/img/hexagon-shaded.svg") no-repeat center;
   }
