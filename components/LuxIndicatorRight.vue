@@ -45,4 +45,13 @@
       margin: 0;
     }
   }
+
+  .hexagon-question {
+    right: -360px;
+    width: 350px;
+
+    & > p {
+      font-size: 14px;
+    }
+  }
 </style>

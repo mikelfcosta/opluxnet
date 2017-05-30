@@ -16,11 +16,11 @@ module.exports = {
   /*
   ** Global CSS
   */
+  plugins: ['~plugins/bootstrap-vue'],
   css: [
     { src: '~assets/css/main.scss', lang: 'scss' },
     { src: '~assets/css/font-awesome.scss', lang: 'scss' }
   ],
-  plugins: ['~plugins/bootstrap-vue'],
   /*
   ** Add axios globally
   */
