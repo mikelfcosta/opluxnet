@@ -43,6 +43,10 @@
       font-family: "Open Sans", sans-serif;
       font-size: 24px;
       margin: 0;
+
+      &.margin-10 {
+        margin-bottom: 10px;
+      }
     }
   }
 

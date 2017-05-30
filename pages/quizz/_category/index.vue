@@ -18,7 +18,7 @@
     </div>
     <div class="description" v-if="description.name">
       <h2>{{ description.name }}</h2>
-      <p>{{ description.text }}</p>
+      <p>{{ description.description }}</p>
     </div>
     <lux-footer></lux-footer>
   </div>

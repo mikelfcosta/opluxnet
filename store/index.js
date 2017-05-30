@@ -7,7 +7,7 @@ export const state = {
           id: '1',
           name: 'Qual princesa Disney você seria?',
           description: 'Realize um teste rápido e descubra, se você estivesse no universo Disney, qual princesa mais se identificaria com você.',
-          link: '1',
+          link: 'princesa-disney',
           questions: [
             {
               question: 'Quais seriam suas férias ideais?',
@@ -20,6 +20,58 @@ export const state = {
                 'Roles culturais, como ir a museus e etc.',
                 'Qualquer lugar para poder sair da rotina!',
                 'Algum lugar que eu possa me conectar com meu lado espiritual'
+              ]
+            },
+            {
+              question: 'Qual seria seu Final de Semana ideal?',
+              answers: [
+                'Andar de bicicleta, fazer uma caminhada, etc.',
+                'Visitar minha família',
+                'Um Netflix em casa',
+                'Uma festa com a galera',
+                'Um rolê pela cidade',
+                'Estudando algo novo, investindo tempo em meus projetos',
+                'Um parque aquático',
+                'Piquenique no parque'
+              ]
+            },
+            {
+              question: 'Qual seria seu lugar favorito para comer?',
+              answers: [
+                'Comida asiática',
+                'Nada melhor que nossa própria casa!',
+                'Algum lugar com uma bela vista',
+                'Um lugar legal pra levar a galera e dividir a comida',
+                'Restaurantes locais, para experimentar coisas novas',
+                'Um café, onde eu possa também ler ou usar meu computador',
+                'Algum restaurante chique!',
+                'Ir num vegetariano/vegano'
+              ]
+            },
+            {
+              question: 'O que você imagina para seu futuro?',
+              answers: [
+                'Qualquer coisa, contanto que seja uma escolha minha e que eu seja bom naquilo',
+                'Quero crescer profissionalmente!',
+                'Quero morar perto da minha família',
+                'Quero poder continuar próximo das pessoas que importam pra mim',
+                'Quero viajar todo o mundo!',
+                'Terminando meu doutorado!',
+                'Quero montar uma família e me mudar para longe de onde cresci',
+                'Quer poder ter vários animais de estimação'
+              ]
+            },
+            {
+              question: 'Qual a profissão dos seus sonhos?',
+              answers: [
+                'Atleta',
+                'Cargo público',
+                'Crítica de obras de arte',
+                'Promotora de eventos',
+                'Aeromoça',
+                'Professora',
+                'Viver da minha arte',
+                'Bióloga'
               ]
             }
           ]
