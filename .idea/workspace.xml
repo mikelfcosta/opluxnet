@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94c872cd-e452-45c6-a424-876792bbd609" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/LuxIndicatorBottom.vue" afterPath="$PROJECT_DIR$/components/LuxIndicatorBottom.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/LuxIndicatorLeft.vue" afterPath="$PROJECT_DIR$/components/LuxIndicatorLeft.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/LuxLogin.vue" afterPath="$PROJECT_DIR$/components/LuxLogin.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/home.vue" afterPath="$PROJECT_DIR$/pages/home.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/login.vue" afterPath="$PROJECT_DIR$/pages/login.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/store/index.js" afterPath="$PROJECT_DIR$/store/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,24 +23,28 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="174" column="55" lean-forward="true" selection-start-line="174" selection-start-column="55" selection-end-line="174" selection-end-column="55" />
+            <state relative-caret-position="370">
+              <caret line="170" column="29" lean-forward="false" selection-start-line="170" selection-start-column="29" selection-end-line="170" selection-end-column="29" />
               <folding>
-                <element signature="e#360#3117#0" expanded="false" />
-                <element signature="e#4738#4794#0" expanded="true" />
-                <element signature="e#4855#4988#0" expanded="true" />
-                <element signature="e#4908#4945#0" expanded="true" />
+                <element signature="e#58#4390#0" expanded="false" />
+                <element signature="e#387#3144#0" expanded="false" />
+                <element signature="e#5558#5926#0" expanded="false" />
+                <element signature="e#5612#5668#0" expanded="true" />
+                <element signature="e#5729#5862#0" expanded="true" />
+                <element signature="e#5782#5819#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LuxOrbs.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/LuxOrbs.vue">
+      <file leaf-file-name="login.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/login.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="65" lean-forward="true" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
-              <folding />
+            <state relative-caret-position="304">
+              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="59" selection-end-column="6" />
+              <folding>
+                <element signature="e#2433#2482#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -48,10 +52,10 @@
       <file leaf-file-name="LuxLogin.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/LuxLogin.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="90" column="19" lean-forward="false" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
+            <state relative-caret-position="368">
+              <caret line="26" column="91" lean-forward="false" selection-start-line="26" selection-start-column="91" selection-end-line="26" selection-end-column="91" />
               <folding>
-                <element signature="e#2077#2128#0" expanded="true" />
+                <element signature="e#2127#2178#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,6 +76,7 @@
       <find>plugin</find>
       <find>cursor</find>
       <find>lux-indica</find>
+      <find>provider</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -100,7 +105,6 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/server/api/auth.js" />
         <option value="$PROJECT_DIR$/components/LuxHeader.vue" />
-        <option value="$PROJECT_DIR$/pages/login.vue" />
         <option value="$PROJECT_DIR$/pages/quizz/index.vue" />
         <option value="$PROJECT_DIR$/pages/quizz/_id.vue" />
         <option value="$PROJECT_DIR$/pages/quizz/_category.vue" />
@@ -111,7 +115,6 @@
         <option value="$PROJECT_DIR$/components/LuxQuizProgress.vue" />
         <option value="$PROJECT_DIR$/pages/quizz/_category/_id/index.vue" />
         <option value="$PROJECT_DIR$/components/LuxMainProgress.vue" />
-        <option value="$PROJECT_DIR$/store/index.js" />
         <option value="$PROJECT_DIR$/pages/quizz/_category/index.vue" />
         <option value="$PROJECT_DIR$/components/LuxHexagon.vue" />
         <option value="$PROJECT_DIR$/components/LuxBreadcrumbs.vue" />
@@ -119,6 +122,8 @@
         <option value="$PROJECT_DIR$/pages/home.vue" />
         <option value="$PROJECT_DIR$/components/LuxIndicatorLeft.vue" />
         <option value="$PROJECT_DIR$/components/LuxIndicatorBottom.vue" />
+        <option value="$PROJECT_DIR$/store/index.js" />
+        <option value="$PROJECT_DIR$/pages/login.vue" />
         <option value="$PROJECT_DIR$/components/LuxLogin.vue" />
       </list>
     </option>
@@ -213,6 +218,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="opluxnet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opluxnet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opluxnet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="store" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -421,7 +440,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65260000" />
+    <option name="totallyTimeSpent" value="66117000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -497,8 +516,7 @@
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#p#0;n#lux-indicator-left#0;n#lux-hexagon#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#2378#2427#0" expanded="true" />
-            <element signature="e#2908#3331#0" expanded="false" />
+            <element signature="e#2433#2482#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -749,35 +767,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/login.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="113" column="3" lean-forward="true" selection-start-line="84" selection-start-column="2" selection-end-line="113" selection-end-column="3" />
-          <folding>
-            <element signature="e#2378#2427#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/home.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="89" column="2" lean-forward="false" selection-start-line="89" selection-start-column="2" selection-end-line="89" selection-end-column="2" />
           <folding>
             <element signature="e#2518#2567#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="174" column="55" lean-forward="true" selection-start-line="174" selection-start-column="55" selection-end-line="174" selection-end-column="55" />
-          <folding>
-            <element signature="e#360#3117#0" expanded="false" />
-            <element signature="e#4738#4794#0" expanded="true" />
-            <element signature="e#4855#4988#0" expanded="true" />
-            <element signature="e#4908#4945#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -790,14 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/LuxOrbs.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="65" lean-forward="true" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/LuxIndicatorBottom.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
@@ -806,12 +793,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/components/LuxOrbs.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="65" lean-forward="true" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="170" column="29" lean-forward="false" selection-start-line="170" selection-start-column="29" selection-end-line="170" selection-end-column="29" />
+          <folding>
+            <element signature="e#58#4390#0" expanded="false" />
+            <element signature="e#387#3144#0" expanded="false" />
+            <element signature="e#5558#5926#0" expanded="false" />
+            <element signature="e#5612#5668#0" expanded="true" />
+            <element signature="e#5729#5862#0" expanded="true" />
+            <element signature="e#5782#5819#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/login.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="59" selection-end-column="6" />
+          <folding>
+            <element signature="e#2433#2482#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/components/LuxLogin.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="90" column="19" lean-forward="false" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
+        <state relative-caret-position="368">
+          <caret line="26" column="91" lean-forward="false" selection-start-line="26" selection-start-column="91" selection-end-line="26" selection-end-column="91" />
           <folding>
-            <element signature="e#2077#2128#0" expanded="true" />
+            <element signature="e#2127#2178#0" expanded="true" />
           </folding>
         </state>
       </provider>

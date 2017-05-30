@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export const state = {
   quiz: [
     {
@@ -145,7 +147,12 @@ export const state = {
         }
       ]
     }
-  ]
+  ],
+  login: {
+    loggedIn: false,
+    provider: 'none',
+    user: {}
+  }
 }
 
 export const mutations = {
@@ -156,7 +163,27 @@ export const mutations = {
   }
 }
 
-export const actions = {}
+export const actions = {
+  login ({ commit, state }) {
+    axios.get('http://localhost:3000/api/auth/me')
+      .then(response => {
+        const provider = response.data.provider
+        console.log(provider)
+        if (provider === 'facebook') {
+          state.login.provider = 'facebook'
+          state.login.avatarImage = `https://graph.facebook.com/${response.data.id}/picture?type=large`
+          state.login.user = response.data
+          state.login.loggedIn = true
+        } else if (provider === 'google') {
+          state.login.provider = 'google'
+          state.login.avatarImage = response.data.photos[0].value.replace('sz=50', 'sz=250')
+          state.login.user = response.data
+          state.login.loggedIn = true
+        }
+      })
+      .catch(err => console.log(err))
+  }
+}
 
 export const getters = {
   getCompletionPercentage (state) {
@@ -173,5 +200,8 @@ export const getters = {
       return acc
     }, 0)
     return Math.ceil((completedQuiz / totalQuiz) * 100)
+  },
+  getUser (state) {
+    return state.login
   }
 }
