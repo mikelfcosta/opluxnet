@@ -6,8 +6,18 @@ import api from './api'
 const app = express()
 const host = process.env.HOST || '127.0.0.1'
 const port = process.env.PORT || 3000
+const passport = require('passport')
 
 app.set('port', port)
+
+app.use(require('body-parser').urlencoded({ extended: true }))
+app.use(require('express-session')({
+  secret: 'luxxtheworld',
+  resave: true,
+  saveUninitialized: true
+}))
+app.use(passport.initialize())
+app.use(passport.session())
 
 // Import API Routes
 app.use('/api', api)

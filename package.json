@@ -14,12 +14,17 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "body-parser": "^1.17.2",
     "bootstrap-vue": "^0.15.8",
     "cross-env": "^4.0.0",
     "css-loader": "^0.28.1",
     "express": "^4.14.0",
+    "express-session": "^1.15.3",
     "node-sass": "^4.5.3",
     "nuxt": "~0.10.6",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth20": "^1.0.0",
     "sass-loader": "^6.0.5",
     "source-map-support": "^0.4.14",
     "vue-style-loader": "^3.0.1"

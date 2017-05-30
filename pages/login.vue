@@ -2,26 +2,39 @@
   <div class="container" style="height: 100vh;">
     <lux-header :breadcrumbs="['home', '>', 'login']"></lux-header>
     <div class="mid-aligner login-container">
-      <lux-hexagon width="150" height="176" type="flat" shadow="blurred" class="mid-aligner login-hexagon">
+      <lux-hexagon width="150" height="176" type="image" shadow="blurred" class="login-hexagon" v-if="avatarImage"
+      :style="{ background: `url(${avatarImage}) no-repeat center`, backgroundSize: 'cover' }">
+      </lux-hexagon>
+      <lux-hexagon width="150" height="176" type="flat" shadow="blurred" class="mid-aligner login-hexagon" v-else>
         <img src="/img/default-avatar.png" alt="Login" class="default-avatar">
       </lux-hexagon>
       <div class="login-options">
-        <lux-hexagon width="105" height="123" type="flat" shadow="blurred" class="mid-aligner login-hexagon">
+        <lux-hexagon width="105" height="123" :type="provider === 'facebook' ? 'flat-blue' : 'flat'" shadow="blurred" class="mid-aligner login-hexagon"
+                     action="facebook-login" :state="provider === 'facebook' ? 'home' : false">
           <div class="horizontal-indicator facebook">
-            <span></span><p>login</p>
+            <span></span>
+            <p v-if="provider === 'facebook'">logado</p>
+            <p v-else>login</p>
           </div>
-          <img src="/img/facebook-logo.png" alt="Login Facebook">
+          <img src="/img/facebook-logo-white.png" alt="Login Facebook" v-if="provider === 'facebook'">
+          <img src="/img/facebook-logo.png" alt="Login Facebook" v-else>
         </lux-hexagon>
-        <lux-hexagon width="105" height="123" type="flat" shadow="blurred" class="mid-aligner login-hexagon">
+        <lux-hexagon width="105" height="123" :type="provider === 'google' ? 'flat-red' : 'flat'" shadow="blurred" class="mid-aligner login-hexagon"
+                     action="google-login" :state="provider === 'google' ? 'home' : false">
           <div class="vertical-indicator">
-            <span></span><p>login</p>
+            <span></span>
+            <p v-if="provider === 'google'">logado</p>
+            <p v-else>login</p>
           </div>
-          <img src="/img/google-logo.png" alt="Login Google">
+          <img src="/img/google-logo-white.png" alt="Login Google" v-if="provider === 'google'">
+          <img src="/img/google-logo.png" alt="Login Google" v-else>
         </lux-hexagon>
       </div>
-      <lux-hexagon width="61" height="72" type="flat" shadow="blurred" class="mid-aligner login-hexagon" state="home">
+      <lux-hexagon width="61" height="72" type="flat" shadow="blurred" class="mid-aligner login-hexagon" state="home"
+      v-if="provider === 'none'">
         <div class="horizontal-indicator continue">
-          <span></span><p>continuar sem login</p>
+          <span></span>
+          <p>continuar sem login</p>
         </div>
         <img src="/img/logout.png" alt="Continuar sem Login">
       </lux-hexagon>
@@ -35,8 +48,29 @@
   import LuxHeader from '~components/LuxHeader.vue'
   import LuxHexagon from '~components/LuxHexagon.vue'
   import LuxFooter from '~components/LuxFooter.vue'
+  import axios from 'axios'
 
   export default {
+    data () {
+      return {
+        provider: 'none',
+        avatarImage: ''
+      }
+    },
+    created () {
+      axios.get('http://localhost:3000/api/auth/me')
+        .then(response => {
+          const provider = response.data.provider
+          if (provider === 'facebook') {
+            this.provider = 'facebook'
+            this.avatarImage = `https://graph.facebook.com/${response.data.id}/picture?type=large`
+          } else if (provider === 'google') {
+            this.provider = 'google'
+            this.avatarImage = response.data.photos[0].value.replace('sz=50', 'sz=250')
+          }
+        })
+        .catch(err => console.log(err))
+    },
     components: {
       LuxHeader,
       LuxHexagon,
@@ -53,7 +87,7 @@
     right: -80px;
     bottom: -135px;
     height: 150px;
-    border-left: 1px solid rgba(255,255,255,0.6);
+    border-left: 1px solid rgba(255, 255, 255, 0.6);
 
     & > span {
       position: absolute;
@@ -63,7 +97,7 @@
       height: 15px;
       border-radius: 50%;
       display: block;
-      background-color: rgba(255,255,255,0.6);
+      background-color: rgba(255, 255, 255, 0.6);
     }
 
     & > p {
@@ -81,7 +115,7 @@
     position: absolute;
     left: -140px;
     width: 130px;
-    border-bottom: 1px solid rgba(255,255,255,0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 
     &.facebook {
       top: -10px;
@@ -107,7 +141,7 @@
       height: 15px;
       border-radius: 50%;
       display: block;
-      background-color: rgba(255,255,255,0.6);
+      background-color: rgba(255, 255, 255, 0.6);
     }
 
     & > p {
@@ -137,7 +171,7 @@
     }
 
     & > img {
-      opacity: 0.6;
+      opacity: 0.8;
     }
   }
 

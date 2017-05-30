@@ -1,0 +1,12 @@
+<svg width="317" height="364" viewBox="0 0 317 364" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>hexagon-flat-red</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-161 258)">
+<g id="hexagon-flat-red">
+<use xlink:href="#path0_fill" transform="translate(161 -257.7)" fill="#DB4437"/>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 7.62939e-07 272.5L 7.62939e-07 90.8L 158.5 3.8147e-07L 317 90.8L 317 272.5L 158.5 363.4L 7.62939e-07 272.5Z"/>
+</defs>
+</svg>

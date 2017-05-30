@@ -1,17 +1,24 @@
 <template>
   <div class="hexagon" :class="{ [type]: true, ['shadow-'+shadow]: true }"
-       :style="{ width: width+'px', height: height+'px', background }" @click="changeState">
+       :style="{ width: width+'px', height: height+'px', background }" @click="clickEvent">
     <slot></slot>
   </div>
 </template>
 
 <script>
   export default {
-    props: ['type', 'shadow', 'width', 'height', 'state'],
+    props: ['type', 'shadow', 'width', 'height', 'state', 'action'],
     methods: {
-      changeState () {
-        if (!this.state) return null
-        return this.$router.push(this.state)
+      clickEvent () {
+        if (this.state) return this.$router.push(this.state)
+        if (this.action === 'facebook-login') return this.facebookLogin()
+        if (this.action === 'google-login') return this.googleLogin()
+      },
+      facebookLogin () {
+        window.location.href = '/api/auth/facebook'
+      },
+      googleLogin () {
+        window.location.href = '/api/auth/google'
       }
     },
     computed: {
@@ -30,6 +37,12 @@
 
   .flat {
     background: url("/img/hexagon-flat.svg") no-repeat center;
+    &-red {
+      background: url("/img/hexagon-flat-red.svg") no-repeat center;
+    }
+    &-blue {
+      background: url("/img/hexagon-flat-blue.svg") no-repeat center;
+    }
   }
 
   .faded {
