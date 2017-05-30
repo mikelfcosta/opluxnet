@@ -1,6 +1,6 @@
 <template>
   <div class="container" style="height: 100vh;">
-    <lux-header></lux-header>
+    <lux-header :breadcrumbs="['Home', '>', 'Login']"></lux-header>
   </div>
 </template>
 
