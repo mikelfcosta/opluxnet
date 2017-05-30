@@ -13,9 +13,9 @@
     computed: {
       orbs () {
         return [
+          { state: 'login', active: this.$route.name === 'login' },
           { state: 'home', active: this.$route.name === 'home' },
-          { state: 'quiz', active: this.$route.name === 'quiz' },
-          { state: 'quizresult', active: this.$route.name === 'quizresult' }
+          { state: 'quiz', active: this.$route.name === 'quiz' }
         ]
       }
     }
@@ -27,17 +27,17 @@
     padding: 20px 0;
 
     &-orb {
-      width: 7px;
-      height: 7px;
-      background-color: rgba(50,50,50,0.5);
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
       margin: 0 3px;
+      border: 2px solid white;
       transition: all 200ms ease;
 
       &__active {
         width: 12px;
         height: 12px;
-        background-color: black;
+        background-color: white;
       }
     }
   }

@@ -2,24 +2,24 @@
   <div class="container" style="height: 100vh;">
     <lux-header :breadcrumbs="['home', '>', 'login']"></lux-header>
     <div class="mid-aligner login-container">
-      <lux-hexagon width="150" height="176" type="flat" class="mid-aligner login-hexagon">
+      <lux-hexagon width="150" height="176" type="flat" shadow="blurred" class="mid-aligner login-hexagon">
         <img src="/img/default-avatar.png" alt="Login" class="default-avatar">
       </lux-hexagon>
       <div class="login-options">
-        <lux-hexagon width="105" height="123" type="flat" class="mid-aligner login-hexagon">
+        <lux-hexagon width="105" height="123" type="flat" shadow="blurred" class="mid-aligner login-hexagon">
           <div class="horizontal-indicator facebook">
             <span></span><p>login</p>
           </div>
           <img src="/img/facebook-logo.png" alt="Login Facebook">
         </lux-hexagon>
-        <lux-hexagon width="105" height="123" type="flat" class="mid-aligner login-hexagon">
+        <lux-hexagon width="105" height="123" type="flat" shadow="blurred" class="mid-aligner login-hexagon">
           <div class="vertical-indicator">
             <span></span><p>login</p>
           </div>
           <img src="/img/google-logo.png" alt="Login Google">
         </lux-hexagon>
       </div>
-      <lux-hexagon width="61" height="72" type="flat" class="mid-aligner login-hexagon">
+      <lux-hexagon width="61" height="72" type="flat" shadow="blurred" class="mid-aligner login-hexagon">
         <div class="horizontal-indicator continue">
           <span></span><p>continuar sem login</p>
         </div>

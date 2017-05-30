@@ -25,6 +25,6 @@
     flex-direction: column;
     position: absolute;
     left: 0;
-    bottom: 80px;
+    bottom: 20px;
   }
 </style>
