@@ -74,7 +74,9 @@ export const state = {
                 'Bióloga'
               ]
             }
-          ]
+          ],
+          results: ['Mulan', 'Elsa', 'Rapunzel', 'Branca de Neve', 'Jasmine', 'Bela', 'Ariel', 'Pocahontas'],
+          done: false
         },
         {
           id: '2',
@@ -146,6 +148,11 @@ export const state = {
   ]
 }
 
-export const mutations = {}
+export const mutations = {
+  setAsDone (category, quiz) {
+    const toBeSet = state.quiz[category].quizzes.filter(q => q.id === quiz)[0]
+    toBeSet.done = true
+  }
+}
 
 export const actions = {}
