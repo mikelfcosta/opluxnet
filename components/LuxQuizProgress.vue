@@ -1,9 +1,9 @@
 <template>
   <div class="progress-container">
     <div class="progress">
-      <div class="progress-bar" role="progressbar" :style="{ width: percentage + '%'}"></div>
+      <div class="progress-bar" role="progressbar" :style="{ width: (current/total)*100 + '%'}"></div>
       <div class="progress-text">
-        {{ percentage }}%
+        {{ current }}/{{ total }}
       </div>
     </div>
   </div>
@@ -11,7 +11,7 @@
 
 <script>
   export default {
-    props: ['percentage']
+    props: ['current', 'total']
   }
 </script>
 

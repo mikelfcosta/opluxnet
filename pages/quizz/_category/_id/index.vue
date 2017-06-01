@@ -1,8 +1,13 @@
 <template>
   <div class="container mid-aligner" style="height: 100vh">
-    <lux-header :breadcrumbs="['home', '>', 'login', '>', 'quizz', '>', this.$route.params.category, '>', this.quiz.link]">
+    <lux-header>
     </lux-header>
-    <lux-login></lux-login>
+    <lux-circle-button :size="50" class="top-right" v-if="!end">
+      <img src="/img/ico-back.svg" alt="Voltar" width="25">
+    </lux-circle-button>
+    <lux-share-buttons class="top-right" v-else>
+
+    </lux-share-buttons>
     <div class="quiz" v-if="!end">
       <!--<lux-hexagon width="394" height="462" type="flat" shadow="blurred"></lux-hexagon>-->
       <div class="question open-sans">
@@ -23,9 +28,12 @@
     <div class="result" v-else>
       <lux-hexagon width="395" height="463" type="flat" shadow="blurred">
       </lux-hexagon>
-      <h1 class="open-sans">Vocé é a <b style="text-transform: uppercase">{{ result }}</b></h1>
+      <div class="result-details mid-aligner">
+        <h1 class="open-sans">Você é <b style="text-transform: uppercase">{{ result.result }}</b></h1>
+        <p class="open-sans">{{ result.description }}</p>
+      </div>
     </div>
-    <lux-quiz-progress :percentage="percentage"></lux-quiz-progress>
+    <lux-quiz-progress :current="currentIndex" :total="quiz.questions.length" v-if="!end"></lux-quiz-progress>
   </div>
 </template>
 
@@ -34,15 +42,17 @@
   import LuxHeader from '~components/LuxHeader.vue'
   import LuxIndicatorRight from '~components/LuxIndicatorRight.vue'
   import LuxQuizProgress from '~components/LuxQuizProgress.vue'
-  import LuxLogin from '~components/LuxLogin.vue'
+  import LuxCircleButton from '~components/LuxCircleButton.vue'
+  import LuxShareButtons from '~components/LuxShareButtons.vue'
   import { mapMutations } from 'vuex'
   export default {
     components: {
       LuxHexagon,
       LuxHeader,
       LuxIndicatorRight,
-      LuxLogin,
-      LuxQuizProgress
+      LuxCircleButton,
+      LuxQuizProgress,
+      LuxShareButtons
     },
     data () {
       return {
@@ -83,9 +93,6 @@
       },
       current () {
         return this.quiz.questions[this.currentIndex]
-      },
-      percentage () {
-        return (this.currentIndex / this.quiz.questions.length) * 100
       }
     }
   }
@@ -128,12 +135,28 @@
   }
 
   .result {
+    display: flex;
+    align-items: center;
+
+    &-details {
+      margin-left: 40px;
+      flex-direction: column;
+    }
 
     h1 {
-      margin-top: 30px;
-      text-align: center;
       color: white;
-
     }
+
+    p {
+      max-width: 400px;
+      color: white;
+    }
+  }
+
+  .top-right {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    flex-direction: column;
   }
 </style>

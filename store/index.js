@@ -77,7 +77,12 @@ export const state = {
               ]
             }
           ],
-          results: ['Mulan', 'Elsa', 'Rapunzel', 'Branca de Neve', 'Jasmine', 'Bela', 'Ariel', 'Pocahontas'],
+          results: [
+            {
+              result: 'Mulan',
+              description: 'Você é a atlética do grupo. Vai pra academia todos os dias e de final de semana se exercita no parque. Se for determinada e curtir culinária asiática, você pode ser literalmente a própria reincarnação da Mulan!'
+            },
+            'Elsa', 'Rapunzel', 'Branca de Neve', 'Jasmine', 'Bela', 'Ariel', 'Pocahontas'],
           done: false
         },
         {
@@ -157,14 +162,14 @@ export const state = {
 
 export const mutations = {
   setAsDone (state, payload) {
-    const { category, id } = payload
+    const {category, id} = payload
     const toBeSet = state.quiz.filter(q => q.name === category)[0].quizzes.filter(q => q.link === id)[0]
     toBeSet.done = true
   }
 }
 
 export const actions = {
-  login ({ commit, state }) {
+  login ({commit, state}) {
     axios.get('http://localhost:3000/api/auth/me')
       .then(response => {
         const provider = response.data.provider
