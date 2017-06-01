@@ -141,6 +141,8 @@
     &-details {
       margin-left: 40px;
       flex-direction: column;
+      justify-content: left;
+      align-items: flex-start;
     }
 
     h1 {
