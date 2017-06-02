@@ -392,7 +392,7 @@ export const state = {
       ]
     },
     {
-      name: 'nomes',
+      name: 'datas',
       quizzes: [
         {
           id: 0,
@@ -674,7 +674,103 @@ export const state = {
         }
       ]
     },
-    {name: 'datas', quizzes: []}
+    {
+      name: 'nomes',
+      quizzes: [
+        {
+          id: 0,
+          name: 'Nome Star Wars',
+          description: 'asdsadas',
+          link: 'nome-star-wars',
+          result: {
+            questions: ['Primeiro Nome', 'Sobrenome', 'Nome da Mãe', 'Bairro que Mora'],
+            answers: [],
+            result () {
+              let answers = this.result.answers
+              return answers[1].substring(0, 2) + answers[0].substring(0, 1) + answers[2].substring(0, 1) + answers[3].substring(0, 2)
+            }
+          }
+        },
+        {
+          id: 1,
+          name: 'Nome RPG',
+          description: 'sadadas',
+          link: 'nome-rpg',
+          result: {
+            questions: ['Primeiro Nome', 'Nome do Pai', 'Cidade que Nasceu'],
+            result () {
+              let answers = this.result.questions
+              const abc = [
+                'A',
+                'B',
+                'C',
+                'D',
+                'E',
+                'F',
+                'H',
+                'I',
+                'G',
+                'L',
+                'M',
+                'N',
+                'O',
+                'P',
+                'R',
+                'S',
+                'T',
+                'U',
+                'V',
+                'X',
+                'W',
+                'Y',
+                'Z',
+                ' '
+              ]
+              const ypl = [
+                'Y',
+                'P',
+                'L',
+                'T',
+                'A',
+                'V',
+                'K',
+                'R',
+                'E',
+                'Z',
+                'G',
+                'M',
+                'S',
+                'H',
+                'U',
+                'B',
+                'X',
+                'N',
+                'C',
+                'D',
+                'I',
+                'J',
+                'F',
+                'Q',
+                'O',
+                'W',
+                ' '
+              ]
+              const replaced = answers.map(answer => {
+                let array = answer.split('')
+                array.map(item => {
+                  abc.forEach((letter, index) => {
+                    if (item === letter) item = ypl[index]
+                  })
+                  return item
+                })
+                return array.join('')
+              })
+              return `${replaced[0]}, filho de ${replaced[1]} nascido em ${replaced[2]}`
+            }
+          }
+        }
+      ]
+    }
   ],
   login: {
     loggedIn: false,
