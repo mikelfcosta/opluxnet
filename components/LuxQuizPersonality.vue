@@ -33,13 +33,67 @@
   export default {
     name: 'LuxQuizPersonality',
     props: ['end', 'current', 'result'],
-    component: {
+    components: {
       LuxHexagon,
       LuxIndicatorRight
     }
   }
 </script>
 
-<style>
+<style lang="scss" scoped>
+  .quiz {
+    position: relative;
+    width: 500px;
+  }
 
+  .hexagon-icon {
+    width: 58px;
+    height: 67px;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .question {
+  /*padding-left: 40px;*/
+
+  & > h1 {
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: white;
+        text-transform: uppercase;
+      }
+  }
+
+  .hexagon-choice {
+    position: relative;
+    margin-bottom: -10px;
+  &:nth-of-type(2n) {
+     right: -30px;
+   }
+  }
+
+  .result {
+    display: flex;
+    align-items: center;
+
+  &-details {
+     margin-left: 40px;
+     flex-direction: column;
+     justify-content: left;
+     align-items: flex-start;
+   }
+
+  h1 {
+    color: white;
+  }
+
+  p {
+    max-width: 400px;
+    color: white;
+  }
+  }
 </style>

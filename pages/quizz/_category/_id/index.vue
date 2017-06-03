@@ -16,18 +16,23 @@
 </template>
 
 <script>
-
   import LuxHeader from '~components/LuxHeader.vue'
   import LuxQuizProgress from '~components/LuxQuizProgress.vue'
   import LuxCircleButton from '~components/LuxCircleButton.vue'
   import LuxShareButtons from '~components/LuxShareButtons.vue'
+  import LuxQuizDates from '~components/LuxQuizDates.vue'
+  import LuxQuizNames from '~components/LuxQuizNames.vue'
+  import LuxQuizPersonality from '~components/LuxQuizPersonality.vue'
   import { mapMutations } from 'vuex'
   export default {
     components: {
       LuxHeader,
       LuxCircleButton,
       LuxQuizProgress,
-      LuxShareButtons
+      LuxShareButtons,
+      LuxQuizDates,
+      LuxQuizNames,
+      LuxQuizPersonality
     },
     data () {
       return {
@@ -81,62 +86,6 @@
 </script>
 
 <style lang="scss" scoped>
-  .quiz {
-    position: relative;
-    width: 500px;
-  }
-
-  .hexagon-icon {
-    width: 58px;
-    height: 67px;
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-  }
-
-  .question {
-    /*padding-left: 40px;*/
-
-    & > h1 {
-      font-family: "Open Sans", sans-serif;
-      font-weight: bold;
-      font-style: italic;
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: white;
-      text-transform: uppercase;
-    }
-  }
-
-  .hexagon-choice {
-    position: relative;
-    margin-bottom: -10px;
-    &:nth-of-type(2n) {
-      right: -30px;
-    }
-  }
-
-  .result {
-    display: flex;
-    align-items: center;
-
-    &-details {
-      margin-left: 40px;
-      flex-direction: column;
-      justify-content: left;
-      align-items: flex-start;
-    }
-
-    h1 {
-      color: white;
-    }
-
-    p {
-      max-width: 400px;
-      color: white;
-    }
-  }
-
   .top-right {
     position: absolute;
     right: 0;
