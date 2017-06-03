@@ -28,7 +28,16 @@
 </template>
 
 <script>
-
+  import LuxHexagon from '~components/LuxHexagon.vue'
+  import LuxIndicatorRight from '~components/LuxIndicatorRight.vue'
+  export default {
+    name: 'LuxQuizPersonality',
+    props: ['end', 'current', 'result'],
+    component: {
+      LuxHexagon,
+      LuxIndicatorRight
+    }
+  }
 </script>
 
 <style>

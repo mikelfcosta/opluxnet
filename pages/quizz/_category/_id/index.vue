@@ -8,24 +8,23 @@
     <lux-share-buttons class="top-right" v-else>
 
     </lux-share-buttons>
+    <component :is="quizType" :end="end" :current="current" :result="result">
 
+    </component>
     <lux-quiz-progress :current="currentIndex" :total="quiz.questions.length" v-if="!end"></lux-quiz-progress>
   </div>
 </template>
 
 <script>
-  import LuxHexagon from '~components/LuxHexagon.vue'
+
   import LuxHeader from '~components/LuxHeader.vue'
-  import LuxIndicatorRight from '~components/LuxIndicatorRight.vue'
   import LuxQuizProgress from '~components/LuxQuizProgress.vue'
   import LuxCircleButton from '~components/LuxCircleButton.vue'
   import LuxShareButtons from '~components/LuxShareButtons.vue'
   import { mapMutations } from 'vuex'
   export default {
     components: {
-      LuxHexagon,
       LuxHeader,
-      LuxIndicatorRight,
       LuxCircleButton,
       LuxQuizProgress,
       LuxShareButtons
@@ -69,6 +68,13 @@
       },
       current () {
         return this.quiz.questions[this.currentIndex]
+      },
+      quizType () {
+        switch (this.$route.params.category) {
+          case 'personalidades': return 'LuxQuizPersonality'
+          case 'nomes': return 'LuxQuizNames'
+          case 'datas': return 'LuxQuizDates'
+        }
       }
     }
   }
