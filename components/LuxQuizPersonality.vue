@@ -24,17 +24,55 @@
         <p class="open-sans">{{ result.description }}</p>
       </div>
     </div>
+    <lux-quiz-progress :current="currentIndex" :total="quiz.questions.length" v-if="!end"></lux-quiz-progress>
   </div>
 </template>
 
 <script>
   import LuxHexagon from '~components/LuxHexagon.vue'
   import LuxIndicatorRight from '~components/LuxIndicatorRight.vue'
+  import LuxQuizProgress from '~components/LuxQuizProgress.vue'
+  import { mapMutations } from 'vuex'
   export default {
     name: 'LuxQuizPersonality',
-    props: ['end', 'current', 'result'],
+    props: ['end', 'quiz'],
+    data () {
+      return {
+        answeredList: [],
+        currentIndex: 0,
+        end: false
+      }
+    },
+    methods: {
+      next (index) {
+        this.answeredList.push(index)
+
+        if (this.currentIndex + 1 === this.quiz.questions.length) {
+          this.currentIndex += 1
+          this.end = true
+          this.setResult()
+        } else this.currentIndex += 1
+      },
+      setResult () {
+        let arr = this.answeredList
+        let result = arr.sort((a, b) =>
+          arr.filter(v => v === a).length - arr.filter(v => v === b).length
+        ).pop()
+        this.result = this.quiz.results[result]
+        this.setAsDone(this.$route.params)
+      },
+      ...mapMutations({
+        setAsDone: 'setAsDone'
+      })
+    },
+    computed: {
+      current () {
+        return this.quiz.questions[this.currentIndex]
+      }
+    },
     components: {
       LuxHexagon,
+      LuxQuizProgress,
       LuxIndicatorRight
     }
   }

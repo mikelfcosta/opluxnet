@@ -8,27 +8,23 @@
     <lux-share-buttons class="top-right" v-else>
 
     </lux-share-buttons>
-    <component :is="quizType" :end="end" :current="current" :result="result">
+    <component :is="quizType" :end="end" :quiz="quiz">
 
     </component>
-    <lux-quiz-progress :current="currentIndex" :total="quiz.questions.length" v-if="!end"></lux-quiz-progress>
   </div>
 </template>
 
 <script>
   import LuxHeader from '~components/LuxHeader.vue'
-  import LuxQuizProgress from '~components/LuxQuizProgress.vue'
   import LuxCircleButton from '~components/LuxCircleButton.vue'
   import LuxShareButtons from '~components/LuxShareButtons.vue'
   import LuxQuizDates from '~components/LuxQuizDates.vue'
   import LuxQuizNames from '~components/LuxQuizNames.vue'
   import LuxQuizPersonality from '~components/LuxQuizPersonality.vue'
-  import { mapMutations } from 'vuex'
   export default {
     components: {
       LuxHeader,
       LuxCircleButton,
-      LuxQuizProgress,
       LuxShareButtons,
       LuxQuizDates,
       LuxQuizNames,
@@ -36,33 +32,9 @@
     },
     data () {
       return {
-        currentIndex: 0,
-        answeredList: [],
         end: false,
         result: ''
       }
-    },
-    methods: {
-      next (index) {
-        this.answeredList.push(index)
-
-        if (this.currentIndex + 1 === this.quiz.questions.length) {
-          this.currentIndex += 1
-          this.end = true
-          this.setResult()
-        } else this.currentIndex += 1
-      },
-      setResult () {
-        let arr = this.answeredList
-        let result = arr.sort((a, b) =>
-          arr.filter(v => v === a).length - arr.filter(v => v === b).length
-        ).pop()
-        this.result = this.quiz.results[result]
-        this.setAsDone(this.$route.params)
-      },
-      ...mapMutations({
-        setAsDone: 'setAsDone'
-      })
     },
     computed: {
       category () {
@@ -70,9 +42,6 @@
       },
       quiz () {
         return this.category.quizzes.filter(q => q.link === this.$route.params.id)[0]
-      },
-      current () {
-        return this.quiz.questions[this.currentIndex]
       },
       quizType () {
         switch (this.$route.params.category) {

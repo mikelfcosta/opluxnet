@@ -789,7 +789,7 @@ export const mutations = {
 
 export const actions = {
   login ({commit, state}) {
-    axios.get('http://localhost:3000/api/auth/me')
+    axios.get('/api/auth/me')
       .then(response => {
         const provider = response.data.provider
         if (provider === 'facebook') {
