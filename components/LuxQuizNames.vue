@@ -1,7 +1,10 @@
 <template>
   <div>
-    <div class="quiz" v-if="!end">
-
+    <div class="quiz" v-if="!current.end">
+      <lux-hexagon width="300" height="350" type="flat" shadow="blurred" class="mid-aligner" style="flex-direction: column">
+        <h3>{{ current.quiz.result.questions[0] }}</h3>
+        <b-form-input style="width: 250px"></b-form-input>
+      </lux-hexagon>
     </div>
     <div class="result" v-else>
       <lux-hexagon width="395" height="463" type="flat" shadow="blurred"></lux-hexagon>
@@ -16,10 +19,17 @@
 <script>
   import LuxHexagon from '~components/LuxHexagon.vue'
   import LuxIndicatorRight from '~components/LuxIndicatorRight.vue'
+  import { mapGetters } from 'vuex'
   export default {
     name: 'LuxQuizNames',
-    props: ['end', 'current', 'result'],
-    component: {
+    props: ['quiz'],
+    created () {
+      this.$store.dispatch('setQuiz', { quiz: this.quiz, category: this.$route.params.category })
+    },
+    computed: {
+      ...mapGetters({current: 'getCurrentQuiz', result: 'setAndGetResult'})
+    },
+    components: {
       LuxHexagon,
       LuxIndicatorRight
     }
