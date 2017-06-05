@@ -3,8 +3,8 @@
     <lux-header :breadcrumbs="['home', '>', 'login', '>', 'quizz', '>', this.$route.params.category]"></lux-header>
     <lux-login></lux-login>
     <div class="mid-aligner category">
-      <lux-hexagon class="mid-aligner" width="260" height="305" type="flat" shadow="blurred">
-
+      <lux-hexagon class="mid-aligner" width="260" height="305" type="image" shadow="blurred"
+                   :style="{ background: `url(/img/quiz/${image}) no-repeat center` }">
       </lux-hexagon>
       <div class="subcategory">
         <lux-hexagon v-for="quiz in category.quizzes" key="quiz.id" class="subcategory-hexagon"
@@ -39,7 +39,8 @@
     },
     data () {
       return {
-        description: {}
+        description: {},
+        image: ''
       }
     },
     computed: {
@@ -50,6 +51,7 @@
     methods: {
       select (quiz) {
         this.description = quiz
+        this.image = quiz.image
       },
       unselect () {
         this.description = {}

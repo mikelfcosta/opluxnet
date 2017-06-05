@@ -10,6 +10,7 @@ export const state = {
           name: 'Qual princesa Disney você seria?',
           description: 'Realize um teste rápido e descubra, se você estivesse no universo Disney, qual princesa mais se identificaria com você.',
           link: 'qual-princesa-da-disney-voce-seria',
+          image: 'quiz_disney.png',
           questions: [
             {
               question: 'Quais seriam suas férias ideais?',
@@ -126,6 +127,7 @@ export const state = {
           name: 'Qual é a sua profissão coxinha?',
           description: 'Realize um teste rápido e descubra qual é a sua profissão coxinha.',
           link: 'qual-e-a-sua-profissao-coxinha',
+          image: 'quiz_prof.png',
           questions: [
             {
               question: 'Qual sua opinião sobre trabalhar em grupo?',
@@ -202,6 +204,7 @@ export const state = {
           name: 'Qual é sua profissão mortadela?',
           description: 'Realize um teste rápido e descubra qual é a sua profissão mortadela.',
           link: 'qual-e-a-sua-profissao-mortadela',
+          image: 'quiz_mort.png',
           questions: [
             {
               question: 'Qual sua opinião sobre trabalhar em grupo?',
@@ -278,6 +281,7 @@ export const state = {
           name: 'Qual personagem de Sense8 você seria?',
           description: 'Realize um teste rápido e descubra, se você estivesse no universo de Sense8, qual personagem mais se identificaria com você.',
           link: 'qual-personagem-de-sense8-voce-seria',
+          image: 'quiz_sense8.png',
           questions: [
             {
               question: 'Quais seriam suas férias ideais?',
@@ -399,6 +403,7 @@ export const state = {
           name: 'Filme Anos 80',
           description: 'asdsad',
           link: 'filme-anos-80',
+          image: 'quiz_anos80.png',
           result: {
             month: [
               'Adoidado',
@@ -468,6 +473,7 @@ export const state = {
           name: 'Apelido Odebrecht',
           description: 'asdsad',
           link: 'apelido-odebretch',
+          image: 'quiz_odebrecht.png',
           result: {
             month: [],
             days: [
@@ -513,6 +519,7 @@ export const state = {
           name: 'Novela Mex. (H)',
           description: 'asdsad',
           link: 'novela-mexicana-m',
+          image: 'quiz_mexicano.png',
           result: {
             month: [
               'Carlos Daniel',
@@ -571,6 +578,7 @@ export const state = {
           name: 'Novela Mex. (M)',
           description: 'asdsad',
           link: 'novela-mexicana-f',
+          image: 'quiz_mexicana.png',
           result: {
             month: [
               'Maria',
@@ -629,6 +637,7 @@ export const state = {
           name: 'Profissão Star Wars',
           description: 'asdsad',
           link: 'profissao-star-wars',
+          image: 'quiz_profstarwars.png',
           result: {
             month: [
               'Aventureiro',
@@ -692,6 +701,7 @@ export const state = {
           name: 'Nome Star Wars',
           description: 'asdsadas',
           link: 'nome-star-wars',
+          image: 'quiz_profstarwars.png',
           result: {
             questions: ['Qual seu nome?', 'Qual seu Sobrenome?', 'Qual o nome de sua Mãe?', 'Qual o nome do bairro que você vive?'],
             answers: []
@@ -703,6 +713,7 @@ export const state = {
           name: 'Nome RPG',
           description: 'sadadas',
           link: 'nome-rpg',
+          image: 'quiz_rpg.png',
           result: {
             questions: ['Qual seu nome?', 'Qual o nome de seu Pai?', 'Qual cidade você nasceu?'],
             answers: []
