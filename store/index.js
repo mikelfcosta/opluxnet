@@ -699,76 +699,8 @@ export const state = {
           description: 'sadadas',
           link: 'nome-rpg',
           result: {
-            questions: ['Primeiro Nome', 'Nome do Pai', 'Cidade que Nasceu'],
-            result () {
-              let answers = this.result.questions
-              const abc = [
-                'A',
-                'B',
-                'C',
-                'D',
-                'E',
-                'F',
-                'H',
-                'I',
-                'G',
-                'L',
-                'M',
-                'N',
-                'O',
-                'P',
-                'R',
-                'S',
-                'T',
-                'U',
-                'V',
-                'X',
-                'W',
-                'Y',
-                'Z',
-                ' '
-              ]
-              const ypl = [
-                'Y',
-                'P',
-                'L',
-                'T',
-                'A',
-                'V',
-                'K',
-                'R',
-                'E',
-                'Z',
-                'G',
-                'M',
-                'S',
-                'H',
-                'U',
-                'B',
-                'X',
-                'N',
-                'C',
-                'D',
-                'I',
-                'J',
-                'F',
-                'Q',
-                'O',
-                'W',
-                ' '
-              ]
-              const replaced = answers.map(answer => {
-                let array = answer.split('')
-                array.map(item => {
-                  abc.forEach((letter, index) => {
-                    if (item === letter) item = ypl[index]
-                  })
-                  return item
-                })
-                return array.join('')
-              })
-              return `${replaced[0]}, filho de ${replaced[1]} nascido em ${replaced[2]}`
-            }
+            questions: ['Qual seu nome?', 'Qual o nome de seu Pai?', 'Qual cidade você nasceu?'],
+            answers: []
           },
           done: false
         }
@@ -794,7 +726,7 @@ export const mutations = {
     state.current.end = true
     quiz.done = true
   },
-  setQuiz (state, { quiz, category }) {
+  setQuiz (state, {quiz, category}) {
     state.current.end = false
     state.current.quiz = quiz
     state.current.category = category
@@ -827,7 +759,7 @@ export const actions = {
       })
       .catch(err => console.log(err))
   },
-  setQuiz ({ commit, state }, quiz) {
+  setQuiz ({commit, state}, quiz) {
     commit('setQuiz', quiz)
   },
   addAnswer ({commit, state}, value) {
@@ -864,8 +796,9 @@ export const getters = {
   setAndGetResult (state) {
     if (!state.current.end) return false
     function capitalize (string) {
-      return string.charAt(0).toUpperCase() + string.slice(1)
+      return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
     }
+
     if (state.current.category === 'personalidades') {
       let arr = state.current.answers
       let result = arr.sort((a, b) =>
@@ -878,6 +811,46 @@ export const getters = {
         const firstname = answers[1].substring(0, 3).toLowerCase() + answers[0].substring(0, 2).toLowerCase()
         const lastname = answers[2].substring(0, 2).toLowerCase() + answers[3].substring(0, 3).toLowerCase()
         return `${capitalize(firstname)} ${capitalize(lastname)}`
+      }
+      if (state.current.quiz.link === 'nome-rpg') {
+        let answers = state.current.quiz.result.answers
+        const abc = {
+          A: 'Y',
+          B: 'P',
+          C: 'L',
+          D: 'T',
+          E: 'A',
+          F: 'V',
+          G: 'K',
+          H: 'R',
+          I: 'E',
+          J: 'Z',
+          K: 'G',
+          L: 'M',
+          M: 'S',
+          N: 'H',
+          O: 'U',
+          P: 'B',
+          Q: 'X',
+          R: 'N',
+          S: 'C',
+          T: 'D',
+          U: 'I',
+          V: 'J',
+          X: 'F',
+          W: 'Q',
+          Y: 'O',
+          Z: 'W'
+        }
+        const replaced = answers.map(answer => {
+          let array = answer.split('')
+          array = array.map(item => {
+            return abc[item.toUpperCase()]
+          })
+          let text = array.join('').toString()
+          return capitalize(text)
+        })
+        return `${replaced[0]}, filho de ${replaced[1]} nascido em ${replaced[2]}`
       }
     }
   },
