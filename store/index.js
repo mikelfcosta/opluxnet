@@ -458,7 +458,8 @@ export const state = {
               'da pesada',
               'de outro mundo',
               'volta ao passado'
-            ]
+            ],
+            answers: []
           },
           done: false
         },
@@ -502,7 +503,8 @@ export const state = {
               'Leite com pêra',
               'Bingola'
             ],
-            years: []
+            years: [],
+            answers: []
           },
           done: false
         },
@@ -559,7 +561,8 @@ export const state = {
               'Gonzalez',
               'Armando'
             ],
-            years: []
+            years: [],
+            answers: []
           },
           done: false
         },
@@ -616,7 +619,8 @@ export const state = {
               'Estrela',
               'Marion'
             ],
-            years: []
+            years: [],
+            answers: []
           },
           done: false
         },
@@ -673,7 +677,8 @@ export const state = {
               'Cidente',
               'Contrabandista'
             ],
-            years: []
+            years: [],
+            answers: []
           },
           done: false
         }
@@ -764,10 +769,13 @@ export const actions = {
   },
   addAnswer ({commit, state}, value) {
     commit('addAnswer', value)
-    if (!state.current.quiz.questions) {
+    if (state.current.category === 'nomes') {
       if (state.current.answers.length === state.current.quiz.result.questions.length) return commit('setAsDone')
-      else return false
-    } else if (state.current.answers.length === state.current.quiz.questions.length) commit('setAsDone')
+    } else if (state.current.category === 'personalidades') {
+      if (state.current.answers.length === state.current.quiz.questions.length) return commit('setAsDone')
+    } else if (state.current.category === 'datas') {
+      if (state.current.quiz.result.answers.length === 3) return commit('setAsDone')
+    }
   }
 }
 
@@ -852,6 +860,23 @@ export const getters = {
         })
         return `${replaced[0]}, filho de ${replaced[1]} nascido em ${replaced[2]}`
       }
+    } else if (state.current.category === 'datas') {
+      const dates = state.current.quiz.result.answers
+      const months = state.current.quiz.result.month
+      const days = state.current.quiz.result.days
+      const years = state.current.quiz.result.years
+      let answer = ``
+      if (days.length > 0) {
+        answer = days[dates[0] - 1]
+      }
+      if (months.length > 0) {
+        answer = answer + ' ' + months[dates[1] - 1].toLowerCase()
+      }
+      if (years.length > 0) {
+        let year = dates[2].substring(3, 4)
+        answer = answer + ' ' + years[year].toLowerCase()
+      }
+      return answer
     }
   },
   isResultUnlocked (state) {
