@@ -6,12 +6,17 @@
         {{ current }}/{{ total }}
       </div>
     </div>
+    <lux-orbs></lux-orbs>
   </div>
 </template>
 
 <script>
+  import LuxOrbs from '~components/LuxOrbs.vue'
   export default {
-    props: ['current', 'total']
+    props: ['current', 'total'],
+    components: {
+      LuxOrbs
+    }
   }
 </script>
 

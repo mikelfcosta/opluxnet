@@ -799,8 +799,10 @@ export const mutations = {
     quiz.done = true
   },
   setQuiz (state, { quiz, category }) {
+    state.current.end = false
     state.current.quiz = quiz
     state.current.category = category
+    state.current.answers.length = 0
   },
   addAnswer (state, index) {
     state.current.answers.push(index)
@@ -870,10 +872,12 @@ export const getters = {
     let count = 0
     state.quiz.forEach(group => {
       group.quizzes.some(quiz => {
-        if (quiz.done) count++
+        if (quiz.done) {
+          count++
+          return true
+        }
       })
     })
-    console.log(count)
     return count === 3
   }
 }
