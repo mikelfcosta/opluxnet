@@ -459,7 +459,8 @@ export const state = {
               'de outro mundo',
               'volta ao passado'
             ]
-          }
+          },
+          done: false
         },
         {
           id: 1,
@@ -502,7 +503,8 @@ export const state = {
               'Bingola'
             ],
             years: []
-          }
+          },
+          done: false
         },
         {
           id: 2,
@@ -558,7 +560,8 @@ export const state = {
               'Armando'
             ],
             years: []
-          }
+          },
+          done: false
         },
         {
           id: 3,
@@ -614,7 +617,8 @@ export const state = {
               'Marion'
             ],
             years: []
-          }
+          },
+          done: false
         },
         {
           id: 4,
@@ -670,7 +674,8 @@ export const state = {
               'Contrabandista'
             ],
             years: []
-          }
+          },
+          done: false
         }
       ]
     },
@@ -689,7 +694,8 @@ export const state = {
               let answers = this.result.answers
               return answers[1].substring(0, 2) + answers[0].substring(0, 1) + answers[2].substring(0, 1) + answers[3].substring(0, 2)
             }
-          }
+          },
+          done: false
         },
         {
           id: 1,
@@ -767,7 +773,8 @@ export const state = {
               })
               return `${replaced[0]}, filho de ${replaced[1]} nascido em ${replaced[2]}`
             }
-          }
+          },
+          done: false
         }
       ]
     }
@@ -776,14 +783,27 @@ export const state = {
     loggedIn: false,
     provider: 'none',
     user: {}
+  },
+  current: {
+    end: false,
+    quiz: {},
+    category: '',
+    answers: []
   }
 }
 
 export const mutations = {
-  setAsDone (state, payload) {
-    const {category, id} = payload
-    const toBeSet = state.quiz.filter(q => q.name === category)[0].quizzes.filter(q => q.link === id)[0]
-    toBeSet.done = true
+  setAsDone (state) {
+    const quiz = state.quiz.filter(q => q.name === state.current.category)[0].quizzes.filter(q => q.id === state.current.quiz.id)[0]
+    state.current.end = true
+    quiz.done = true
+  },
+  setQuiz (state, { quiz, category }) {
+    state.current.quiz = quiz
+    state.current.category = category
+  },
+  addAnswer (state, index) {
+    state.current.answers.push(index)
   }
 }
 
@@ -805,6 +825,13 @@ export const actions = {
         }
       })
       .catch(err => console.log(err))
+  },
+  setQuiz ({ commit, state }, quiz) {
+    commit('setQuiz', quiz)
+  },
+  addAnswer ({commit, state}, index) {
+    commit('addAnswer', index)
+    if (state.current.answers.length === state.current.quiz.questions.length) commit('setAsDone')
   }
 }
 
@@ -826,5 +853,17 @@ export const getters = {
   },
   getUser (state) {
     return state.login
+  },
+  getCurrentQuiz (state) {
+    return state.current
+  },
+  setAndGetResult (state) {
+    if (state.current.category === 'personalidades') {
+      let arr = state.current.answers
+      let result = arr.sort((a, b) =>
+        arr.filter(v => v === a).length - arr.filter(v => v === b).length
+      ).pop()
+      return state.current.quiz.results[result]
+    }
   }
 }

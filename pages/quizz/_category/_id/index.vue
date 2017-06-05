@@ -1,14 +1,13 @@
 <template>
   <div class="container mid-aligner" style="height: 100vh">
-    <lux-header>
-    </lux-header>
-    <lux-circle-button :size="50" class="top-right" v-if="!end">
+    <lux-header></lux-header>
+    <lux-circle-button :size="50" class="top-right" v-if="!current.end" action="goBack">
       <img src="/img/ico-back.svg" alt="Voltar" width="25">
     </lux-circle-button>
     <lux-share-buttons class="top-right" v-else>
 
     </lux-share-buttons>
-    <component :is="quizType" :end="end" :quiz="quiz">
+    <component :is="quizType" :quiz="quiz">
 
     </component>
   </div>
@@ -21,6 +20,7 @@
   import LuxQuizDates from '~components/LuxQuizDates.vue'
   import LuxQuizNames from '~components/LuxQuizNames.vue'
   import LuxQuizPersonality from '~components/LuxQuizPersonality.vue'
+  import { mapGetters } from 'vuex'
   export default {
     components: {
       LuxHeader,
@@ -31,10 +31,7 @@
       LuxQuizPersonality
     },
     data () {
-      return {
-        end: false,
-        result: ''
-      }
+      return {}
     },
     computed: {
       category () {
@@ -49,7 +46,8 @@
           case 'nomes': return 'LuxQuizNames'
           case 'datas': return 'LuxQuizDates'
         }
-      }
+      },
+      ...mapGetters({current: 'getCurrentQuiz'})
     }
   }
 </script>

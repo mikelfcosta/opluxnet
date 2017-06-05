@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div class="quiz" v-if="!end">
+    <div class="quiz" v-if="!current.end">
       <!--<lux-hexagon width="394" height="462" type="flat" shadow="blurred"></lux-hexagon>-->
       <div class="question open-sans">
-        <h1>{{ current.question }}</h1>
+        <h1>{{ question.question }}</h1>
         <div class="answers">
           <lux-hexagon width="58" height="67" type="flat" shadow="blurred" class="mid-aligner hexagon-choice"
-                       v-for="(answer, index) in current.answers" key="index">
+                       v-for="(answer, index) in question.answers" key="index">
             <lux-indicator-right class="hexagon-question open-sans">
               <p class="margin-10">{{ answer }}</p>
             </lux-indicator-right>
@@ -24,7 +24,7 @@
         <p class="open-sans">{{ result.description }}</p>
       </div>
     </div>
-    <lux-quiz-progress :current="currentIndex" :total="quiz.questions.length" v-if="!end"></lux-quiz-progress>
+    <lux-quiz-progress :current="current.answers.length" :total="quiz.questions.length" v-if="!current.end"></lux-quiz-progress>
   </div>
 </template>
 
@@ -32,42 +32,25 @@
   import LuxHexagon from '~components/LuxHexagon.vue'
   import LuxIndicatorRight from '~components/LuxIndicatorRight.vue'
   import LuxQuizProgress from '~components/LuxQuizProgress.vue'
-  import { mapMutations } from 'vuex'
+  import { mapGetters } from 'vuex'
   export default {
     name: 'LuxQuizPersonality',
-    props: ['end', 'quiz'],
     data () {
-      return {
-        answeredList: [],
-        currentIndex: 0,
-        end: false
-      }
+      return {}
+    },
+    props: ['quiz'],
+    created () {
+      this.$store.dispatch('setQuiz', { quiz: this.quiz, category: this.$route.params.category })
     },
     methods: {
       next (index) {
-        this.answeredList.push(index)
-
-        if (this.currentIndex + 1 === this.quiz.questions.length) {
-          this.currentIndex += 1
-          this.end = true
-          this.setResult()
-        } else this.currentIndex += 1
-      },
-      setResult () {
-        let arr = this.answeredList
-        let result = arr.sort((a, b) =>
-          arr.filter(v => v === a).length - arr.filter(v => v === b).length
-        ).pop()
-        this.result = this.quiz.results[result]
-        this.setAsDone(this.$route.params)
-      },
-      ...mapMutations({
-        setAsDone: 'setAsDone'
-      })
+        this.$store.dispatch('addAnswer', index)
+      }
     },
     computed: {
-      current () {
-        return this.quiz.questions[this.currentIndex]
+      ...mapGetters({current: 'getCurrentQuiz', result: 'setAndGetResult'}),
+      question () {
+        return this.current.quiz.questions[this.current.answers.length]
       }
     },
     components: {
