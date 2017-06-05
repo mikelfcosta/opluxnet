@@ -1,6 +1,6 @@
 <template>
   <div class="container mid-aligner" style="height: 100vh">
-    <lux-header></lux-header>
+    <lux-header :breadcrumbs="breadcrumbs"></lux-header>
     <lux-circle-button :size="50" class="top-right" v-if="!current.end" action="goBack">
       <img src="/img/ico-back.svg" alt="Voltar" width="25">
     </lux-circle-button>
@@ -39,6 +39,9 @@
       },
       quiz () {
         return this.category.quizzes.filter(q => q.link === this.$route.params.id)[0]
+      },
+      breadcrumbs () {
+        return this.current.end ? [] : ['home', '>', 'login', '>', 'quizz', '>', this.$route.params.category, '>', this.quiz.link]
       },
       quizType () {
         switch (this.$route.params.category) {

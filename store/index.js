@@ -865,5 +865,15 @@ export const getters = {
       ).pop()
       return state.current.quiz.results[result]
     }
+  },
+  isResultUnlocked (state) {
+    let count = 0
+    state.quiz.forEach(group => {
+      group.quizzes.some(quiz => {
+        if (quiz.done) count++
+      })
+    })
+    console.log(count)
+    return count === 3
   }
 }

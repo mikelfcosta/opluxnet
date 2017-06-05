@@ -18,13 +18,21 @@
       </div>
     </div>
     <div class="result" v-else>
-      <lux-hexagon width="395" height="463" type="flat" shadow="blurred"></lux-hexagon>
+      <lux-circle-button :size="75" action="goBack" class="back-button">
+        <img src="/img/ico-back.svg" alt="Voltar" width="40">
+      </lux-circle-button>
+      <lux-hexagon width="395" height="463" type="image" shadow="blurred"
+                   :style="{ background: `url(/img/quiz/${result.img}) no-repeat center`, backgroundSize: 'cover' }"></lux-hexagon>
       <div class="result-details mid-aligner">
         <h1 class="open-sans">Você é <b style="text-transform: uppercase">{{ result.result }}</b></h1>
         <p class="open-sans">{{ result.description }}</p>
+        <div class="mid-aligner" style="width: 100%;">
+          <lux-result-button :size="75"></lux-result-button>
+        </div>
       </div>
     </div>
-    <lux-quiz-progress :current="current.answers.length" :total="quiz.questions.length" v-if="!current.end"></lux-quiz-progress>
+    <lux-quiz-progress :current="current.answers.length" :total="quiz.questions.length"
+                       v-if="!current.end"></lux-quiz-progress>
   </div>
 </template>
 
@@ -32,6 +40,8 @@
   import LuxHexagon from '~components/LuxHexagon.vue'
   import LuxIndicatorRight from '~components/LuxIndicatorRight.vue'
   import LuxQuizProgress from '~components/LuxQuizProgress.vue'
+  import LuxCircleButton from '~components/LuxCircleButton.vue'
+  import LuxResultButton from '~components/LuxResultButton.vue'
   import { mapGetters } from 'vuex'
   export default {
     name: 'LuxQuizPersonality',
@@ -40,7 +50,7 @@
     },
     props: ['quiz'],
     created () {
-      this.$store.dispatch('setQuiz', { quiz: this.quiz, category: this.$route.params.category })
+      this.$store.dispatch('setQuiz', {quiz: this.quiz, category: this.$route.params.category})
     },
     methods: {
       next (index) {
@@ -56,7 +66,9 @@
     components: {
       LuxHexagon,
       LuxQuizProgress,
-      LuxIndicatorRight
+      LuxIndicatorRight,
+      LuxCircleButton,
+      LuxResultButton
     }
   }
 </script>
@@ -76,45 +88,49 @@
   }
 
   .question {
-  /*padding-left: 40px;*/
+    /*padding-left: 40px;*/
 
-  & > h1 {
-        font-family: "Open Sans", sans-serif;
-        font-weight: bold;
-        font-style: italic;
-        font-size: 24px;
-        margin-bottom: 20px;
-        color: white;
-        text-transform: uppercase;
-      }
+    & > h1 {
+      font-family: "Open Sans", sans-serif;
+      font-weight: bold;
+      font-style: italic;
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: white;
+      text-transform: uppercase;
+    }
   }
 
   .hexagon-choice {
     position: relative;
     margin-bottom: -10px;
-  &:nth-of-type(2n) {
-     right: -30px;
-   }
+    &:nth-of-type(2n) {
+      right: -30px;
+    }
   }
 
   .result {
     display: flex;
     align-items: center;
 
-  &-details {
-     margin-left: 40px;
-     flex-direction: column;
-     justify-content: left;
-     align-items: flex-start;
-   }
+    &-details {
+      margin-left: 40px;
+      flex-direction: column;
+      justify-content: left;
+      align-items: flex-start;
+    }
 
-  h1 {
-    color: white;
+    h1 {
+      color: white;
+    }
+
+    p {
+      max-width: 400px;
+      color: white;
+    }
   }
 
-  p {
-    max-width: 400px;
-    color: white;
-  }
+  .back-button {
+    margin-right: 30px;
   }
 </style>
