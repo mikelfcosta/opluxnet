@@ -688,12 +688,8 @@ export const state = {
           description: 'asdsadas',
           link: 'nome-star-wars',
           result: {
-            questions: ['Primeiro Nome', 'Sobrenome', 'Nome da Mãe', 'Bairro que Mora'],
-            answers: [],
-            result () {
-              let answers = this.result.answers
-              return answers[1].substring(0, 2) + answers[0].substring(0, 1) + answers[2].substring(0, 1) + answers[3].substring(0, 2)
-            }
+            questions: ['Qual seu nome?', 'Qual seu Sobrenome?', 'Qual o nome de sua Mãe?', 'Qual o nome do bairro que você vive?'],
+            answers: []
           },
           done: false
         },
@@ -804,8 +800,11 @@ export const mutations = {
     state.current.category = category
     state.current.answers.length = 0
   },
-  addAnswer (state, index) {
-    state.current.answers.push(index)
+  addAnswer (state, value) {
+    state.current.answers.push(value)
+    if (state.current.quiz.result) {
+      state.current.quiz.result.answers.push(value)
+    }
   }
 }
 
@@ -831,9 +830,12 @@ export const actions = {
   setQuiz ({ commit, state }, quiz) {
     commit('setQuiz', quiz)
   },
-  addAnswer ({commit, state}, index) {
-    commit('addAnswer', index)
-    if (state.current.answers.length === state.current.quiz.questions.length) commit('setAsDone')
+  addAnswer ({commit, state}, value) {
+    commit('addAnswer', value)
+    if (!state.current.quiz.questions) {
+      if (state.current.answers.length === state.current.quiz.result.questions.length) return commit('setAsDone')
+      else return false
+    } else if (state.current.answers.length === state.current.quiz.questions.length) commit('setAsDone')
   }
 }
 
@@ -860,12 +862,23 @@ export const getters = {
     return state.current
   },
   setAndGetResult (state) {
+    if (!state.current.end) return false
+    function capitalize (string) {
+      return string.charAt(0).toUpperCase() + string.slice(1)
+    }
     if (state.current.category === 'personalidades') {
       let arr = state.current.answers
       let result = arr.sort((a, b) =>
         arr.filter(v => v === a).length - arr.filter(v => v === b).length
       ).pop()
       return state.current.quiz.results[result]
+    } else if (state.current.category === 'nomes') {
+      if (state.current.quiz.link === 'nome-star-wars') {
+        let answers = state.current.quiz.result.answers
+        const firstname = answers[1].substring(0, 3).toLowerCase() + answers[0].substring(0, 2).toLowerCase()
+        const lastname = answers[2].substring(0, 2).toLowerCase() + answers[3].substring(0, 3).toLowerCase()
+        return `${capitalize(firstname)} ${capitalize(lastname)}`
+      }
     }
   },
   isResultUnlocked (state) {
