@@ -55,7 +55,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .top-right {
     position: absolute;
     right: 0;

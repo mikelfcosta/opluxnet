@@ -34,7 +34,7 @@
       </div>
       <p>
         A opluxxnet é um projeto que procura expor informações privilegiadas aos usuários com base em perguntas simples, estimulando reflexões e discussões referentes aos direitos de privacidade e neutralidade da internet no Brasil.</p>
-      <button>Entenda mais aqui</button>
+      <button @click="goToHomePlus">Entenda mais aqui</button>
     </div>
   </div>
 </template>
@@ -75,6 +75,11 @@
     },
     computed: {
       ...mapGetters({ user: 'getUser', userinfo: 'getFullResult' })
+    },
+    methods: {
+      goToHomePlus () {
+        this.$router.push('/plus/')
+      }
     },
     components: {
       LuxHexagon
