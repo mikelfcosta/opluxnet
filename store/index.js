@@ -408,7 +408,7 @@ export const state = {
           id: 0,
           name: 'Filme Anos 80',
           abv: '80',
-          description: 'asdsad',
+          description: 'Ja pensou como seria seu filme dos anos 80 ideal? Realize este teste e veja qual Filme dos Anos 80 seria sua cara.',
           link: 'filme-anos-80',
           image: 'quiz_anos80.png',
           result: {
@@ -479,7 +479,7 @@ export const state = {
           id: 1,
           name: 'Apelido Odebrecht',
           abv: 'Ode',
-          description: 'asdsad',
+          description: 'E se você trabalhasse em uma das maiores e mais polêmicas empresas do Brasil, como te chamariam? Faça esse teste e descubra!',
           link: 'apelido-odebretch',
           image: 'quiz_odebrecht.png',
           result: {
@@ -526,7 +526,7 @@ export const state = {
           id: 2,
           name: 'Novela Mex. (H)',
           abv: 'NMH',
-          description: 'asdsad',
+          description: 'Se você fosse um galã das Novelas Mexicanas passando no horário nobre da SBT, qual seria o nome maravilhoso do seu Personagem? Descubra com este quiz, Carlos Eduardo.',
           link: 'novela-mexicana-m',
           image: 'quiz_mexicano.png',
           result: {
@@ -586,7 +586,7 @@ export const state = {
           id: 3,
           name: 'Novela Mex. (M)',
           abv: 'NMM',
-          description: 'asdsad',
+          description: 'Se você fosse uma linda Atriz fazendo sucesso na maior novela mexicana ja lançada na SBT, qual seria o nome de sua maravilhosa personagem? Faça o quiz pra descobrir, Soraya.',
           link: 'novela-mexicana-f',
           image: 'quiz_mexicana.png',
           result: {
@@ -646,7 +646,7 @@ export const state = {
           id: 4,
           name: 'Profissão Star Wars',
           abv: 'SW',
-          description: 'asdsad',
+          description: 'A muita tempo atrás, em uma galaxia muito, muito distante, as pessoas ainda possuiam profissões. Se você vivesse neste universo, qual seria a sua?',
           link: 'profissao-star-wars',
           image: 'quiz_profstarwars.png',
           result: {
@@ -712,7 +712,7 @@ export const state = {
           id: 0,
           name: 'Nome Star Wars',
           abv: 'SW',
-          description: 'asdsadas',
+          description: 'Em uma Galaxia Muito Muito Distante, você precisaria de um nome imponente para sobreviver. Se você estivesse neste universo, qual seria o seu nome? Descubra!',
           link: 'nome-star-wars',
           image: 'quiz_profstarwars.png',
           result: {
@@ -725,7 +725,7 @@ export const state = {
           id: 1,
           name: 'Nome RPG',
           abv: 'RPG',
-          description: 'sadadas',
+          description: 'Para entrar em cavernas e enfrentar dragões, seu herói precisa de um nome lendário e um título imponente. Faça este teste, e descubra qual o nome levar na sua próxima aventura.',
           link: 'nome-rpg',
           image: 'quiz_rpg.png',
           result: {
