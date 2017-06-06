@@ -1,26 +1,25 @@
 <template>
   <div>
-    <div @mouseleave="active = false">
-      <div @mouseenter="active = true">
-        <lux-hexagon width="105" height="123" :type="active ? 'flat' : 'faded'" shadow="blurred" class="mid-aligner">
-          <img src="/img/ico-share.svg" alt="Compartilhar">
-        </lux-hexagon>
+    <social-sharing url="http://www.opluxx.net/plus/" inline-template>
+      <div class="share-buttons">
+        <p><b>Compartilhar</b></p>
+        <network network="facebook">
+          <i class="fa fa-facebook"></i> Facebook
+        </network>
+        <network network="twitter">
+          <i class="fa fa-twitter"></i> Twitter
+        </network>
+        <network network="googleplus">
+          <i class="fa fa-google-plus"></i> Google +
+        </network>
+        <network network="reddit">
+          <i class="fa fa-reddit"></i> Reddit
+        </network>
+        <network network="whatsapp">
+          <i class="fa fa-whatsapp"></i> Whatsapp
+        </network>
       </div>
-      <div>
-        <lux-hexagon width="74" height="87" type="faded" shadow="blurred" class="mid-aligner facebook" v-show="active">
-          <lux-indicator-left class="small" style="width: 100px; left: -110px">
-            <p style="padding-left: 20px;">Compartilhar</p>
-          </lux-indicator-left>
-          <img src="/img/ico-facebook.svg" alt="Facebook" height="40">
-        </lux-hexagon>
-        <lux-hexagon width="74" height="87" type="faded" shadow="blurred" class="mid-aligner google" v-show="active">
-          <lux-indicator-bottom class="small">
-            <p>Compartilhar</p>
-          </lux-indicator-bottom>
-          <img src="/img/ico-google.svg" alt="Google" width="40">
-        </lux-hexagon>
-      </div>
-    </div>
+    </social-sharing>
   </div>
 </template>
 
@@ -43,15 +42,15 @@
 </script>
 
 <style lang="scss" scoped>
-  .facebook {
-    position: relative;
-    top: -20px;
-    right: -65px;
+  p {
+    color: white;
+    text-align: right;
+    margin: 0;
   }
-
-  .google {
-    position: relative;
-    top: -37px;
-    right: -22px;
+  .share-buttons {
+    color: rgba(255,255,255,0.9);
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
   }
 </style>

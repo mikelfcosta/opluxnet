@@ -16,7 +16,7 @@ module.exports = {
   /*
   ** Global CSS
   */
-  plugins: ['~plugins/bootstrap-vue'],
+  plugins: ['~plugins/bootstrap-vue', '~plugins/vue-social-sharing'],
   css: [
     { src: '~assets/css/main.scss', lang: 'scss' },
     { src: '~assets/css/font-awesome.scss', lang: 'scss' }
@@ -25,7 +25,7 @@ module.exports = {
   ** Add axios globally
   */
   build: {
-    vendor: ['axios', 'bootstrap-vue'],
+    vendor: ['axios', 'bootstrap-vue', 'vue-social-sharing'],
     /*
     ** Run ESLINT on save
     */

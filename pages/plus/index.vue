@@ -1,7 +1,7 @@
 <template>
   <div class="container mid-aligner" style="height: 100vh;">
     <lux-header :breadcrumbs="['home', '>', 'plus']" type="white"></lux-header>
-    <lux-share-buttons class="top-right"></lux-share-buttons>
+    <lux-share-buttons class="bottom-right"></lux-share-buttons>
     <div class="quiz-map mid-aligner">
       <div class="row row-top">
         <lux-hexagon type="faded-60" shadow="blurred" width="160" height="190">
@@ -114,10 +114,10 @@
 <style lang="scss" scoped>
   @import 'assets/css/variables.scss';
 
-  .top-right {
+  .bottom-right {
     position: absolute;
     right: 0;
-    top: 20px;
+    bottom: 20px;
     flex-direction: column;
   }
 
