@@ -20,10 +20,12 @@
         </lux-hexagon>
       </div>
     </div>
-    <div class="description" v-if="description.name">
-      <h2>{{ description.name }}</h2>
-      <p>{{ description.description }}</p>
-    </div>
+    <transition name="fade" mode="out-in">
+      <div class="description" v-if="description.name">
+        <h2>{{ description.name }}</h2>
+        <p>{{ description.description }}</p>
+      </div>
+    </transition>
     <lux-footer></lux-footer>
   </div>
 </template>
@@ -106,5 +108,13 @@
     width: 200px;
     height: 400px;
     padding: 20px;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .3s ease;
+  }
+
+  .fade-enter, .fade-leave-to{
+    opacity: 0;
   }
 </style>
