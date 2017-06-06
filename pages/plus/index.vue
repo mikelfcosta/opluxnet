@@ -10,7 +10,7 @@
           </div>
         </lux-hexagon>
         <lux-hexagon type="faded" shadow="blurred" width="160" height="190"
-                     state="category" action="nomes">
+                     state="plus" action="crime">
           <lux-indicator-right style="top: 15px;">
             <p>crime?</p>
           </lux-indicator-right>
@@ -25,7 +25,7 @@
       </div>
       <div class="row row-bot">
         <lux-hexagon type="faded" shadow="blurred" width="160" height="190"
-                     state="category" action="nomes">
+                     state="plus" action="invadido">
           <lux-indicator-left style="top: 15px;">
             <p>invadido</p>
           </lux-indicator-left>
@@ -38,7 +38,7 @@
           </div>
         </lux-hexagon>
         <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190"
-                     state="category" action="datas">
+                     state="plus" action="senhas">
           <lux-indicator-right style="bottom: 30px;">
             <p>senhas</p>
           </lux-indicator-right>
@@ -55,7 +55,7 @@
       </div>
       <div class="row row-bottom">
         <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190"
-                     state="category" action="personalidades">
+                     state="plus" action="premium">
           <lux-indicator-bottom style="left: 150px;">
             <p>premium</p>
           </lux-indicator-bottom>
