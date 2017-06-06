@@ -1,11 +1,11 @@
 <template>
   <div class="container mid-aligner" style="height: 100vh; flex-direction: column;">
     <lux-header :breadcrumbs="['home', '>', 'plus', '>', 'invadido']" type="white"></lux-header>
-    <lux-hexagon type="faded" shadow="blurred" width="160" height="190" class="mid-aligner">
+    <lux-hexagon type="faded" shadow="blurred" width="160" height="190" class="mid-aligner page-icon" v-if="!submit">
       <img src="/img/ico-pwned.svg" class="category-icon" alt="Pwned">
     </lux-hexagon>
-    <h1>‘;-- eu já fui invadido?</h1>
-    <h3>Veja se sua conta de e-mail já foi comprometida em algum furto de dados</h3>
+    <h1 v-if="!submit">‘;-- eu já fui invadido?</h1>
+    <h3 v-if="!submit">Veja se sua conta de e-mail já foi comprometida em algum furto de dados</h3>
     <b-input-group class="email-form">
       <b-form-input v-model="email" @keyup.enter="searchBreaches"></b-form-input>
       <b-input-group-button slot="right">
@@ -105,6 +105,12 @@
     padding: 20px;
   }
 
+  .page-icon {
+    @media only screen and (max-height: 800px) {
+      display: none;
+    }
+  }
+
   .email-form {
     height: 60px;
   }
@@ -160,6 +166,12 @@
     &-body {
       background-color: rgba(255,0,0,0.15);
       padding: 20px;
+      overflow-y: auto;
+      max-height: 500px;
+
+      @media only screen and (max-height: 800px) {
+        max-height: 300px;
+      }
 
       h3 {
         font-weight: bold;
