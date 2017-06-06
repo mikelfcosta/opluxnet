@@ -46,7 +46,6 @@
     name: 'Result',
     data () {
       return {
-        userinfo: ['Michel', 'Costa'],
         image: ''
       }
     },
@@ -63,7 +62,7 @@
       }
     },
     computed: {
-      ...mapGetters({ user: 'getUser' })
+      ...mapGetters({ user: 'getUser', userinfo: 'getFullResult' })
     },
     components: {
       LuxHexagon

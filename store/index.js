@@ -2,6 +2,10 @@ import axios from 'axios'
 import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
 
+function capitalize (string) {
+  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
+}
+
 const store = new Vuex.Store({
   state: {
     quiz: [
@@ -836,9 +840,6 @@ const store = new Vuex.Store({
     },
     setAndGetResult (state) {
       if (!state.current.end) return false
-      function capitalize (string) {
-        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
-      }
 
       if (state.current.category === 'personalidades') {
         let arr = state.current.answers
@@ -923,6 +924,56 @@ const store = new Vuex.Store({
         })
       })
       return count === 3
+    },
+    getFullResult (state) {
+      let result = []
+      const personalityQuiz = state.quiz[0]
+      const dateQuiz = state.quiz[1]
+      const nameQuiz = state.quiz[2]
+
+      // FirstName
+      if (nameQuiz.quizzes[0].result.answers[0] || nameQuiz.quizzes[1].result.answers[0]) {
+        result.push(nameQuiz.quizzes[0].result.answers[0] || nameQuiz.quizzes[1].result.answers[0])
+        result[0] = capitalize(result[0])
+        // LastName
+        if (nameQuiz.quizzes[0].result.answers[1]) result[0] = result[0] + ' ' + capitalize(nameQuiz.quizzes[0].result.answers[1])
+      }
+      // Mothers Name
+      if (nameQuiz.quizzes[0].result.answers[2]) {
+        result.push('Nome da Mãe: ' + capitalize(nameQuiz.quizzes[0].result.answers[2]))
+      }
+      // Fathers Name
+      if (nameQuiz.quizzes[1].result.answers[1]) {
+        result.push('Nome do Pai: ' + capitalize(nameQuiz.quizzes[1].result.answers[1]))
+      }
+      // Region
+      if (nameQuiz.quizzes[0].result.answers[3]) {
+        result.push('Seu bairro: ' + nameQuiz.quizzes[0].result.answers[3])
+      }
+      // Cidade onde Nasceu
+      if (nameQuiz.quizzes[1].result.answers[2]) {
+        result.push('Sua cidade natal: ' + nameQuiz.quizzes[1].result.answers[2])
+      }
+      // Data de Nascimento
+      dateQuiz.quizzes.forEach(quiz => {
+        console.log(quiz.result.answers)
+        if (quiz.result.answers.length === 3) {
+          result.push(`Data de Nascimento: ${quiz.result.answers[0]}/${quiz.result.answers[1]}/${quiz.result.answers[2]}`)
+        }
+      })
+      // Set Personality
+      personalityQuiz.quizzes.forEach(quiz => {
+        let personality = []
+        if (quiz.done) {
+          // Disney Quiz
+          if (quiz.id === 1) {}
+          // Coxinha Quiz
+          if (quiz.id === 2) {}
+          // Mortadela Quiz
+          if (quiz.id === 3) {}
+        }
+      })
+      return result
     }
   },
   plugins: [createPersistedState()]
