@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Space+Mono');
+@import "variables";
+
+@font-face {
+  font-family: Pexico;
+  src: url(/fonts/Pexico.woff);
+  font-weight:400;
+}
+
+* {
+  outline: none;
+  cursor: $cursor;
+}
+
+.pointer {
+  cursor: $pointer;
+  & > * {
+    cursor: $pointer;
+  }
+}
+
+.space-mono {
+  font-family: 'Space Mono', monospace;
+}
+
+.open-sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.mid-aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  @media only screen and (min-width: 1921px) {
+    background-size: cover;
+    background: url("/img/background-shd.jpg") no-repeat center;
+  }
+  @media only screen and (min-width: 1367px) and (max-width: 1920px) {
+    background-size: cover;
+    background: url("/img/background-fhd.jpg") no-repeat center;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1366px) {
+    background-size: cover;
+    background: url("/img/background-hd.jpg") no-repeat center;
+  }
+  @media only screen and (max-width: 767px) {
+    background-size: cover;
+    background: url("/img/background-mobile.jpg") no-repeat center;
+  }
+
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+}
+
+body.black {
+  @media only screen and (min-width: 1921px) {
+    background-size: cover;
+    background: url("/img/background-shd-dark.jpg") no-repeat center;
+  }
+  @media only screen and (min-width: 1367px) and (max-width: 1920px) {
+    background-size: cover;
+    background: url("/img/background-fhd-dark.jpg") no-repeat center;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1366px) {
+    background-size: cover;
+    background: url("/img/background-hd-dark.jpg") no-repeat center;
+  }
+  @media only screen and (max-width: 767px) {
+    background-size: cover;
+    background: url("/img/background-mobile-dark.jpg") no-repeat center;
+  }
+}
+
+.top-right {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  flex-direction: column;
+}
+
+.bottom-right {
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  flex-direction: column;
+}

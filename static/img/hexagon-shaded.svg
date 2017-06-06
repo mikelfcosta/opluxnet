@@ -1,0 +1,18 @@
+<svg width="317" height="364" viewBox="0 0 317 364" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>hexagon-shaded</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-161 258)">
+<g id="hexagon-shaded">
+<use xlink:href="#path0_fill" transform="translate(161 -257.7)" fill="url(#paint0_linear)"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(157.931 273.544 -273.544 157.931 216.31 -34.048)">
+<stop offset="0.1378" stop-color="#FFFFFF"/>
+<stop offset="0.4103" stop-color="#F8F8F8"/>
+<stop offset="0.799" stop-color="#E5E5E5"/>
+<stop offset="1" stop-color="#D9D9D9"/>
+</linearGradient>
+<path id="path0_fill" d="M 7.62939e-07 272.5L 7.62939e-07 90.8L 158.5 3.8147e-07L 317 90.8L 317 272.5L 158.5 363.4L 7.62939e-07 272.5Z"/>
+</defs>
+</svg>
