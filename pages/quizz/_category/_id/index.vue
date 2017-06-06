@@ -4,7 +4,7 @@
     <lux-circle-button :size="50" class="top-right" v-if="!current.end" action="goBack">
       <img src="/img/ico-back.svg" alt="Voltar" width="25">
     </lux-circle-button>
-    <lux-share-buttons class="top-right" v-else>
+    <lux-share-buttons class="bottom-right" v-else>
 
     </lux-share-buttons>
     <component :is="quizType" :quiz="quiz">
@@ -56,10 +56,5 @@
 </script>
 
 <style lang="scss">
-  .top-right {
-    position: absolute;
-    right: 0;
-    top: 20px;
-    flex-direction: column;
-  }
+
 </style>

@@ -14,12 +14,14 @@
       <p>para descobrir sua senha.</p>
     </div>
     <p v-if="time"><a href="https://github.com/howsecureismypassword/hsimp">API oferecida por HSIMP</a></p>
+    <lux-share-buttons class="bottom-right"></lux-share-buttons>
   </div>
 </template>
 
 <script>
   import LuxHeader from '~components/LuxHeader.vue'
   import LuxHexagon from '~components/LuxHexagon.vue'
+  import LuxShareButtons from '~components/LuxShareButtons.vue'
   export default {
     data () {
       return {
@@ -223,7 +225,8 @@
     },
     components: {
       LuxHeader,
-      LuxHexagon
+      LuxHexagon,
+      LuxShareButtons
     }
   }
 </script>

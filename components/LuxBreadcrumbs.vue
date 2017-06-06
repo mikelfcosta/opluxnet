@@ -17,7 +17,7 @@
         if (path === 'home') return '/'
         else if (path === 'login') return '/login'
         else if (path === 'quizz') return '/home'
-        else if (path === 'nomes' || path === 'datas' || path === 'personalidade') return `/quizz/${path}`
+        else if (path === 'nomes' || path === 'datas' || path === 'personalidades') return `/quizz/${path}`
         else if (path === 'plus') return '/plus/'
         else return ''
       }

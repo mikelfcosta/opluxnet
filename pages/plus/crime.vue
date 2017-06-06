@@ -49,6 +49,7 @@
         Ter pleno conhecimento deste assunto, ajuda na conquista da sua liberdade digital!<br>
         Porém é importante que outros também a conquistem para que a igualdade seja alcançada
       </p>
+      <lux-share-buttons class="bottom-right"></lux-share-buttons>
     </div>
   </div>
 </template>
@@ -58,6 +59,7 @@
   import LuxHexagon from '~components/LuxHexagon.vue'
   import LuxCircleButton from '~components/LuxCircleButton.vue'
   import LuxQuizProgress from '~components/LuxQuizProgress.vue'
+  import LuxShareButtons from '~components/LuxShareButtons.vue'
   export default {
     data () {
       return {
@@ -182,7 +184,8 @@
       LuxHeader,
       LuxHexagon,
       LuxCircleButton,
-      LuxQuizProgress
+      LuxQuizProgress,
+      LuxShareButtons
     }
   }
 </script>
