@@ -30,7 +30,7 @@
           <ul>
             <li v-for="breach in breaches">Dados comprometidos em <b>{{ breach.Title }}</b>: {{ breach.DataClasses.toString() }}</li>
           </ul>
-          <p><a href="http://haveibeenpwned.com">Dados segundo "HaveIBeenPwned"</a></p>
+          <p><a href="http://haveibeenpwned.com">API oferecida por "HaveIBeenPwned"</a></p>
         </div>
       </div>
     </div>
