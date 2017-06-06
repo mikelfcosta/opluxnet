@@ -88,6 +88,11 @@
     margin-top: 20px;
   }
 
+  h3 {
+    padding: 0 10px;
+    text-align: center;
+  }
+
   .result {
     display: flex;
     align-items: center;

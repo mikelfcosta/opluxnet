@@ -72,6 +72,11 @@
     border-bottom: 1px solid lightgray;
   }
 
+  h3 {
+    padding: 0 10px;
+    text-align: center;
+  }
+
   .name-quiz-button {
     margin-top: 20px;
   }
