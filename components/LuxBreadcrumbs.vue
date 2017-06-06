@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul :class="{ 'light': type === 'white' }">
     <nuxt-link :to="state(path)" key="path" tag="li" t v-for="path in paths" v-if="path !== '>'">
       {{ path }}
     </nuxt-link>
@@ -11,7 +11,7 @@
   import NuxtLink from '../.nuxt/components/nuxt-link'
   export default {
     components: {NuxtLink},
-    props: ['paths'],
+    props: ['paths', 'type'],
     methods: {
       state (path) {
         if (path === 'home') return '/'
@@ -46,6 +46,21 @@
         padding: 5px 10px;
         font-size: 32px;
         color: rgba(0,0,0,0.75);
+      }
+    }
+  }
+
+  ul.light {
+    :nth-child(2n-1):not(i) {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: black;
+      padding: 5px 10px;
+    }
+
+    li {
+
+      i {
+        color: rgba(255,255,255,0.9);
       }
     }
   }
