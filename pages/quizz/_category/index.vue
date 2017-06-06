@@ -4,7 +4,7 @@
     <lux-login></lux-login>
     <div class="mid-aligner category">
       <lux-hexagon class="mid-aligner" width="260" height="305" type="image" shadow="blurred"
-                   :style="{ background: `url(/img/quiz/${image}) no-repeat center` }">
+                   :style="{ background: `url(/img/${image}) no-repeat center` }">
       </lux-hexagon>
       <div class="subcategory">
         <lux-hexagon v-for="quiz in category.quizzes" key="quiz.id" class="subcategory-hexagon"
@@ -13,7 +13,10 @@
           <lux-indicator-right style="top: 25px;">
             <p>{{ quiz.id }}</p>
           </lux-indicator-right>
-          <h1 class="hexagon-icon mid-aligner" @mouseover="select(quiz)" @mouseout="unselect()">{{ quiz.id }}</h1>
+          <h1 class="hexagon-icon mid-aligner" @mouseover="select(quiz)" @mouseout="unselect()"
+          :style="{ color: quiz.done ? 'rgba(0,0,0,0.75)' : 'white' }">
+            {{ quiz.abv }}
+          </h1>
         </lux-hexagon>
       </div>
     </div>
@@ -39,19 +42,21 @@
     },
     data () {
       return {
-        description: {},
-        image: ''
+        description: {}
       }
     },
     computed: {
       category () {
         return this.$store.state.quiz.filter(c => c.name === this.$route.params.category)[0]
+      },
+      image () {
+        if (this.description.image) return '/quiz/' + this.description.image
+        else return this.category.icon + '-cut.png'
       }
     },
     methods: {
       select (quiz) {
         this.description = quiz
-        this.image = quiz.image
       },
       unselect () {
         this.description = {}
@@ -89,6 +94,8 @@
   .hexagon-icon {
     width: 109px;
     height: 125px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
   }
 
   .description {

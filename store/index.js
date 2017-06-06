@@ -4,10 +4,12 @@ export const state = {
   quiz: [
     {
       name: 'personalidades',
+      icon: 'ico-personality',
       quizzes: [
         {
           id: '1',
           name: 'Qual princesa Disney você seria?',
+          abv: 'PD',
           description: 'Realize um teste rápido e descubra, se você estivesse no universo Disney, qual princesa mais se identificaria com você.',
           link: 'qual-princesa-da-disney-voce-seria',
           image: 'quiz_disney.png',
@@ -125,6 +127,7 @@ export const state = {
         {
           id: '2',
           name: 'Qual é a sua profissão coxinha?',
+          abv: 'PC',
           description: 'Realize um teste rápido e descubra qual é a sua profissão coxinha.',
           link: 'qual-e-a-sua-profissao-coxinha',
           image: 'quiz_prof.png',
@@ -202,6 +205,7 @@ export const state = {
         {
           id: '3',
           name: 'Qual é sua profissão mortadela?',
+          abv: 'PM',
           description: 'Realize um teste rápido e descubra qual é a sua profissão mortadela.',
           link: 'qual-e-a-sua-profissao-mortadela',
           image: 'quiz_mort.png',
@@ -279,6 +283,7 @@ export const state = {
         {
           id: '4',
           name: 'Qual personagem de Sense8 você seria?',
+          abv: 'S8',
           description: 'Realize um teste rápido e descubra, se você estivesse no universo de Sense8, qual personagem mais se identificaria com você.',
           link: 'qual-personagem-de-sense8-voce-seria',
           image: 'quiz_sense8.png',
@@ -397,10 +402,12 @@ export const state = {
     },
     {
       name: 'datas',
+      icon: 'ico-dates',
       quizzes: [
         {
           id: 0,
           name: 'Filme Anos 80',
+          abv: '80',
           description: 'asdsad',
           link: 'filme-anos-80',
           image: 'quiz_anos80.png',
@@ -471,6 +478,7 @@ export const state = {
         {
           id: 1,
           name: 'Apelido Odebrecht',
+          abv: 'Ode',
           description: 'asdsad',
           link: 'apelido-odebretch',
           image: 'quiz_odebrecht.png',
@@ -517,6 +525,7 @@ export const state = {
         {
           id: 2,
           name: 'Novela Mex. (H)',
+          abv: 'NMH',
           description: 'asdsad',
           link: 'novela-mexicana-m',
           image: 'quiz_mexicano.png',
@@ -576,6 +585,7 @@ export const state = {
         {
           id: 3,
           name: 'Novela Mex. (M)',
+          abv: 'NMM',
           description: 'asdsad',
           link: 'novela-mexicana-f',
           image: 'quiz_mexicana.png',
@@ -635,6 +645,7 @@ export const state = {
         {
           id: 4,
           name: 'Profissão Star Wars',
+          abv: 'SW',
           description: 'asdsad',
           link: 'profissao-star-wars',
           image: 'quiz_profstarwars.png',
@@ -695,10 +706,12 @@ export const state = {
     },
     {
       name: 'nomes',
+      icon: 'ico-names',
       quizzes: [
         {
           id: 0,
           name: 'Nome Star Wars',
+          abv: 'SW',
           description: 'asdsadas',
           link: 'nome-star-wars',
           image: 'quiz_profstarwars.png',
@@ -711,6 +724,7 @@ export const state = {
         {
           id: 1,
           name: 'Nome RPG',
+          abv: 'RPG',
           description: 'sadadas',
           link: 'nome-rpg',
           image: 'quiz_rpg.png',
