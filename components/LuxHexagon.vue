@@ -63,6 +63,14 @@
     &-60 {
       background: url("/img/hexagon-faded-60.svg") no-repeat center;
     }
+
+    &-green {
+      background: url("/img/hexagon-faded-green.svg") no-repeat center;
+    }
+
+    &-red {
+      background: url("/img/hexagon-faded-red.svg") no-repeat center;
+    }
   }
 
   .image {

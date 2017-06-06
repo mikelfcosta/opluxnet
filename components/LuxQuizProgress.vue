@@ -6,14 +6,14 @@
         {{ current }}/{{ total }}
       </div>
     </div>
-    <lux-orbs></lux-orbs>
+    <lux-orbs v-if="!hideOrbs"></lux-orbs>
   </div>
 </template>
 
 <script>
   import LuxOrbs from '~components/LuxOrbs.vue'
   export default {
-    props: ['current', 'total'],
+    props: ['current', 'total', 'hideOrbs'],
     components: {
       LuxOrbs
     }
