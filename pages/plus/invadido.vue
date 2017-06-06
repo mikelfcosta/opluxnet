@@ -35,6 +35,7 @@
       </div>
     </div>
     <lux-share-buttons class="bottom-right"></lux-share-buttons>
+    <lux-help></lux-help>
   </div>
 </template>
 
@@ -42,6 +43,7 @@
   import LuxHeader from '~components/LuxHeader.vue'
   import LuxHexagon from '~components/LuxHexagon.vue'
   import LuxShareButtons from '~components/LuxShareButtons.vue'
+  import LuxHelp from '~components/LuxHelp.vue'
   import axios from 'axios'
   export default {
     data () {
@@ -83,6 +85,7 @@
     components: {
       LuxHeader,
       LuxHexagon,
+      LuxHelp,
       LuxShareButtons
     }
   }

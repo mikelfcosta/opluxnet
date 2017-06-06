@@ -46,6 +46,10 @@ body {
     background-size: cover;
     background: url("/img/background-hd.jpg") no-repeat center;
   }
+  @media only screen and (max-width: 767px) {
+    background-size: cover;
+    background: url("/img/background-mobile.jpg") no-repeat center;
+  }
 
   font-family: "Open Sans", sans-serif;
   overflow: hidden;
@@ -63,6 +67,10 @@ body.black {
   @media only screen and (min-width: 768px) and (max-width: 1366px) {
     background-size: cover;
     background: url("/img/background-hd-dark.jpg") no-repeat center;
+  }
+  @media only screen and (max-width: 767px) {
+    background-size: cover;
+    background: url("/img/background-mobile-dark.jpg") no-repeat center;
   }
 }
 

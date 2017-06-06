@@ -1,6 +1,6 @@
 <template>
   <div>
-    <social-sharing url="http://www.opluxx.net/plus/" inline-template>
+    <social-sharing inline-template>
       <div class="share-buttons">
         <p><b>Compartilhar</b></p>
         <network network="facebook">

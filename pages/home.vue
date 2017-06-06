@@ -54,6 +54,7 @@
       </div>
     </div>
     <lux-footer></lux-footer>
+    <lux-help></lux-help>
   </div>
 </template>
 
@@ -65,6 +66,7 @@
   import LuxIndicatorLeft from '~components/LuxIndicatorLeft.vue'
   import LuxIndicatorBottom from '~components/LuxIndicatorBottom.vue'
   import LuxLogin from '~components/LuxLogin.vue'
+  import LuxHelp from '~components/LuxHelp.vue'
   export default {
     data () {
       return {
@@ -78,6 +80,7 @@
       LuxLogin,
       LuxHexagon,
       LuxFooter,
+      LuxHelp,
       LuxIndicatorLeft,
       LuxIndicatorRight,
       LuxIndicatorBottom

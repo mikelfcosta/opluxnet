@@ -53,22 +53,23 @@
         </lux-hexagon>
 
       </div>
-      <div class="row row-bottom">
-        <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190"
-                     state="plus" action="premium">
-          <lux-indicator-bottom style="left: 150px;">
-            <p>premium</p>
-          </lux-indicator-bottom>
-          <div class="category-button mid-aligner"
-               @mouseenter="icoPremium = true" @mouseleave="icoPremium = false">
-            <transition name="fade" mode="out-in">
-              <h3 v-if="icoPremium">Internet Premium</h3>
-              <img src="/img/ico-premium.svg" class="category-icon" alt="Internet Premium" v-else>
-            </transition>
-          </div>
-        </lux-hexagon>
-      </div>
+      <!--<div class="row row-bottom">-->
+        <!--<lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190"-->
+                     <!--state="plus" action="premium">-->
+          <!--<lux-indicator-bottom style="left: 150px;">-->
+            <!--<p>premium</p>-->
+          <!--</lux-indicator-bottom>-->
+          <!--<div class="category-button mid-aligner"-->
+               <!--@mouseenter="icoPremium = true" @mouseleave="icoPremium = false">-->
+            <!--<transition name="fade" mode="out-in">-->
+              <!--<h3 v-if="icoPremium">Internet Premium</h3>-->
+              <!--<img src="/img/ico-premium.svg" class="category-icon" alt="Internet Premium" v-else>-->
+            <!--</transition>-->
+          <!--</div>-->
+        <!--</lux-hexagon>-->
+      <!--</div>-->
     </div>
+    <lux-help></lux-help>
   </div>
 </template>
 
@@ -79,6 +80,7 @@
   import LuxIndicatorRight from '~components/LuxIndicatorRight.vue'
   import LuxIndicatorLeft from '~components/LuxIndicatorLeft.vue'
   import LuxIndicatorBottom from '~components/LuxIndicatorBottom.vue'
+  import LuxHelp from '~components/LuxHelp.vue'
   export default {
     mounted () {
       if (process.BROWSER_BUILD) {
@@ -104,6 +106,7 @@
       LuxHeader,
       LuxShareButtons,
       LuxHexagon,
+      LuxHelp,
       LuxIndicatorLeft,
       LuxIndicatorRight,
       LuxIndicatorBottom

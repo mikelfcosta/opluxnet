@@ -26,6 +26,7 @@
         <p>{{ description.description }}</p>
       </div>
     </transition>
+    <lux-help></lux-help>
     <lux-footer></lux-footer>
   </div>
 </template>
@@ -36,6 +37,7 @@
   import LuxFooter from '~components/LuxFooter.vue'
   import LuxIndicatorRight from '~components/LuxIndicatorRight.vue'
   import LuxLogin from '~components/LuxLogin.vue'
+  import LuxHelp from '~components/LuxHelp.vue'
   export default {
     validate ({ params }) {
       if (params.category === 'nomes' || params.category === 'datas' || params.category === 'personalidades') {
@@ -69,6 +71,7 @@
       LuxHexagon,
       LuxFooter,
       LuxLogin,
+      LuxHelp,
       LuxIndicatorRight
     }
   }

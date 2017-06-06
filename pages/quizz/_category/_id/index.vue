@@ -10,6 +10,7 @@
     <component :is="quizType" :quiz="quiz">
 
     </component>
+    <lux-help></lux-help>
   </div>
 </template>
 
@@ -20,12 +21,14 @@
   import LuxQuizDates from '~components/LuxQuizDates.vue'
   import LuxQuizNames from '~components/LuxQuizNames.vue'
   import LuxQuizPersonality from '~components/LuxQuizPersonality.vue'
+  import LuxHelp from '~components/LuxHelp.vue'
   import { mapGetters } from 'vuex'
   export default {
     components: {
       LuxHeader,
       LuxCircleButton,
       LuxShareButtons,
+      LuxHelp,
       LuxQuizDates,
       LuxQuizNames,
       LuxQuizPersonality

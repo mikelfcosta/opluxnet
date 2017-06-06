@@ -36,6 +36,7 @@
         <img src="/img/logout.png" alt="Continuar sem Login">
       </lux-hexagon>
       <lux-footer></lux-footer>
+      <lux-help></lux-help>
     </div>
   </div>
 </template>
@@ -47,6 +48,7 @@
   import LuxIndicatorLeft from '~components/LuxIndicatorLeft.vue'
   import LuxIndicatorBottom from '~components/LuxIndicatorBottom.vue'
   import { mapGetters } from 'vuex'
+  import LuxHelp from '~components/LuxHelp.vue'
 
   export default {
     data () {
@@ -61,6 +63,7 @@
     components: {
       LuxHeader,
       LuxHexagon,
+      LuxHelp,
       LuxFooter,
       LuxIndicatorLeft,
       LuxIndicatorBottom

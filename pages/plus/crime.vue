@@ -51,6 +51,7 @@
       </p>
       <lux-share-buttons class="bottom-right"></lux-share-buttons>
     </div>
+    <lux-help></lux-help>
   </div>
 </template>
 
@@ -60,6 +61,7 @@
   import LuxCircleButton from '~components/LuxCircleButton.vue'
   import LuxQuizProgress from '~components/LuxQuizProgress.vue'
   import LuxShareButtons from '~components/LuxShareButtons.vue'
+  import LuxHelp from '~components/LuxHelp.vue'
   export default {
     data () {
       return {
@@ -185,7 +187,8 @@
       LuxHexagon,
       LuxCircleButton,
       LuxQuizProgress,
-      LuxShareButtons
+      LuxShareButtons,
+      LuxHelp
     }
   }
 </script>
