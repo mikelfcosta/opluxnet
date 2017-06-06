@@ -49,7 +49,7 @@
       return {}
     },
     props: ['quiz'],
-    created () {
+    mounted () {
       this.$store.dispatch('setQuiz', {quiz: this.quiz, category: this.$route.params.category})
     },
     methods: {
@@ -58,7 +58,7 @@
       }
     },
     computed: {
-      ...mapGetters({current: 'getCurrentQuiz', result: 'setAndGetResult'}),
+      ...mapGetters({current: 'getCurrentQuiz', result: 'setAndGetResult', unlocked: 'isResultUnlocked'}),
       question () {
         return this.current.quiz.questions[this.current.answers.length]
       }

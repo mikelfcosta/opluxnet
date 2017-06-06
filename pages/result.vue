@@ -52,6 +52,12 @@
     created () {
       this.$store.dispatch('login')
     },
+    beforeRouteEnter (to, from, next) {
+      next(vm => {
+        if (vm.$store.getters.isResultUnlocked) next()
+        else vm.$router.push('/home')
+      })
+    },
     mounted () {
       if (process.BROWSER_BUILD) {
         let element = document.getElementsByTagName('body')[0]
@@ -59,6 +65,12 @@
         return navigator.geolocation.getCurrentPosition(position => {
           this.image = `https://maps.googleapis.com/maps/api/staticmap?center=${position.coords.latitude},${position.coords.longitude}&size=200x600&scale=2&zoom=16&key=AIzaSyDwhlhie8kVA6_SsYJx8DgiqJ_F8ArYeFw`
         })
+      }
+    },
+    beforeDestroy () {
+      if (process.BROWSER_BUILD) {
+        let element = document.getElementsByTagName('body')[0]
+        element.classList.remove('black')
       }
     },
     computed: {

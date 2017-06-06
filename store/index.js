@@ -87,6 +87,7 @@ const store = new Vuex.Store({
                 ]
               }
             ],
+            answers: [],
             results: [
               {
                 result: 'Mulan',
@@ -180,6 +181,7 @@ const store = new Vuex.Store({
                 ]
               }
             ],
+            answers: [],
             results: [
               {
                 result: 'Médico',
@@ -258,6 +260,7 @@ const store = new Vuex.Store({
                 ]
               }
             ],
+            answers: [],
             results: [
               {
                 result: 'Designer',
@@ -772,7 +775,10 @@ const store = new Vuex.Store({
     addAnswer (state, value) {
       state.current.answers.push(value)
       if (state.current.quiz.result) {
-        state.current.quiz.result.answers.push(value)
+        return state.current.quiz.result.answers.push(value)
+      }
+      if (state.current.quiz.answers) {
+        return state.current.quiz.answers.push(value)
       }
     },
     setUser (state, user) {
@@ -956,21 +962,79 @@ const store = new Vuex.Store({
       }
       // Data de Nascimento
       dateQuiz.quizzes.forEach(quiz => {
-        console.log(quiz.result.answers)
         if (quiz.result.answers.length === 3) {
           result.push(`Data de Nascimento: ${quiz.result.answers[0]}/${quiz.result.answers[1]}/${quiz.result.answers[2]}`)
         }
       })
       // Set Personality
       personalityQuiz.quizzes.forEach(quiz => {
-        let personality = []
         if (quiz.done) {
+          console.log(quiz)
           // Disney Quiz
-          if (quiz.id === 1) {}
+          if (quiz.id === '1') {
+            let personality = []
+            personality[0] = (() => {
+              let obj = {
+                '0': 'Parece que você é uma pessoa que gosta de viajar',
+                '1': 'Acreditamos que você é uma pessoa que gosta de passar um tempo sozinho',
+                '2': 'Acreditamos que você é uma pessoa bem ligada aos seus pais',
+                '3': 'Acreditamos que você é uma pessoa que valoriza muito seus amigos',
+                '4': 'Parece que você é uma pessoa que gosta de viajar',
+                '5': 'Aparentemente você é uma pessoa que gosta de estudar',
+                '6': 'Aparentemente você é uma pessoa que não gosta muito de ficar em casa',
+                '7': 'Você parece ser uma pessoa bem ligada à natureza'
+              }
+              return obj[quiz.answers[0]]
+            })()
+            personality[1] = (() => {
+              let obj = {
+                '0': 'Vemos também que você é do tipo de pessoa que gosta de se exercitar',
+                '1': 'E também muito ligada à família',
+                '2': 'E que você gosta de passar um tempo sozinho',
+                '3': 'E que você gosta de estar com seus amigos',
+                '4': 'E que gosta de sair da rotina',
+                '5': 'E também gosta de se dedicar aos seus projetos',
+                '6': 'E que gosta de sair da rotina',
+                '7': 'E que você gosta de ir a lugares com muito verde.'
+              }
+              if (quiz.answers[0] === 1 && quiz.answers[1] === 2) return ''
+              if (quiz.answers[0] === 3 && quiz.answers[1] === 3) return ''
+              if (quiz.answers[0] === 7 && quiz.answers[1] === 7) return ''
+              return obj[quiz.answers[1]]
+            })()
+            personality[2] = (() => {
+              let obj = {
+                '0': 'Acreditamos que existam grandes chances de te encontrar num restaurante de comida asiática aos finais de semana',
+                '1': 'Acreditamos que existam grandes chances de te encontrar em casa aos finais de semana',
+                '2': 'Acreditamos que existam grandes chances de te encontrar em restaurantes aos finais de semana',
+                '3': 'Acreditamos que existam grandes chances de te encontrar em alguma festa aos finais de semana',
+                '4': 'Acreditamos que existam grandes chances de te encontrar em pequenos restaurantes aos finais de semana',
+                '5': 'Acreditamos que existam grandes chances de te encontrar em lugares como Starbucks aos finais de semana',
+                '6': 'Acreditamos que existam grandes chances de te encontrar em grandes restaurantes aos finais de semana',
+                '7': 'Acreditamos que existam grandes chances de te encontrar em restaurantes naturais aos finais de semana'
+              }
+              return obj[quiz.answers[2]]
+            })()
+            personality[3] = (() => {
+              let obj = {
+                '0': 'E você também parece ser uma pessoa que quer ser reconhecida pelo que faz no trabalho',
+                '1': 'E você também parece ser uma pessoa que dá muita importância para a vida profissional',
+                '2': 'E você também parece ser uma pessoa que dá mais valor à vida pessoal do que profissional',
+                '3': 'E você também parece ser uma pessoa que dá mais valor à vida pessoal do que profissional',
+                '4': 'E você também parece ser uma pessoa que dá mais valor à vida pessoal do que profissional',
+                '5': 'E você também parece ser uma pessoa que dá muita importância para a vida profissional',
+                '6': 'E você também parece ser uma pessoa que dá mais valor à vida pessoal do que profissional',
+                '7': 'E você também parece ser uma pessoa que dá mais valor à vida pessoal do que profissional'
+              }
+              return obj[quiz.answers[3]]
+            })()
+            personality = personality.filter(p => p !== '')
+            result.push(...personality)
+          }
           // Coxinha Quiz
-          if (quiz.id === 2) {}
+          if (quiz.id === '2') {}
           // Mortadela Quiz
-          if (quiz.id === 3) {}
+          if (quiz.id === '3') {}
         }
       })
       return result

@@ -37,7 +37,7 @@
         show: false
       }
     },
-    created () {
+    mounted () {
       this.$store.dispatch('setQuiz', { quiz: this.quiz, category: this.$route.params.category })
     },
     computed: {
