@@ -743,6 +743,7 @@ const store = new Vuex.Store({
     login: {
       loggedIn: false,
       provider: 'none',
+      avatarImage: '',
       user: {}
     },
     current: {
@@ -769,6 +770,9 @@ const store = new Vuex.Store({
       if (state.current.quiz.result) {
         state.current.quiz.result.answers.push(value)
       }
+    },
+    setUser (state, user) {
+      state.login = user
     }
   },
   actions: {
@@ -777,15 +781,19 @@ const store = new Vuex.Store({
         .then(response => {
           const provider = response.data.provider
           if (provider === 'facebook') {
-            state.login.provider = 'facebook'
-            state.login.avatarImage = `https://graph.facebook.com/${response.data.id}/picture?type=large`
-            state.login.user = response.data
-            state.login.loggedIn = true
+            commit('setUser', {
+              provider: 'facebook',
+              avatarImage: `https://graph.facebook.com/${response.data.id}/picture?type=large`,
+              user: response.data,
+              loggedIn: true
+            })
           } else if (provider === 'google') {
-            state.login.provider = 'google'
-            state.login.avatarImage = response.data.photos[0].value.replace('sz=50', 'sz=250')
-            state.login.user = response.data
-            state.login.loggedIn = true
+            commit('setUser', {
+              provider: 'google',
+              avatarImage: response.data.photos[0].value.replace('sz=50', 'sz=250'),
+              user: response.data,
+              loggedIn: true
+            })
           }
         })
         .catch(err => console.log(err))

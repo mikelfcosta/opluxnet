@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Space+Mono');
 @import "variables";
 
+@font-face {
+  font-family: Pexico;
+  src: url(/fonts/Pexico.woff);
+  font-weight:400;
+}
+
 * {
   outline: none;
   cursor: $cursor;
@@ -43,4 +49,19 @@ body {
 
   font-family: "Open Sans", sans-serif;
   overflow: hidden;
+}
+
+body.black {
+  @media only screen and (min-width: 1921px) {
+    background-size: cover;
+    background: url("/img/background-shd-dark.jpg") no-repeat center;
+  }
+  @media only screen and (min-width: 1367px) and (max-width: 1920px) {
+    background-size: cover;
+    background: url("/img/background-fhd-dark.jpg") no-repeat center;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1366px) {
+    background-size: cover;
+    background: url("/img/background-hd-dark.jpg") no-repeat center;
+  }
 }
