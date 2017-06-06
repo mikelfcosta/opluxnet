@@ -3,7 +3,8 @@
     <div class="quiz" v-if="!current.end">
       <lux-hexagon width="300" height="350" type="flat" shadow="blurred" class="mid-aligner" style="flex-direction: column">
         <h3>{{ current.quiz.result.questions[current.answers.length] }}</h3>
-        <b-form-input class="name-quiz-input" placeholder="Digite aqui..." v-model="answer"></b-form-input>
+        <b-form-input class="name-quiz-input" placeholder="Digite aqui..."
+                      v-model="answer" @keyup.enter="next"></b-form-input>
         <small class="text-muted" v-show="show">Por favor preencha o campo corretamente</small>
         <b-button class="name-quiz-button" @click="next">Continuar</b-button>
       </lux-hexagon>
