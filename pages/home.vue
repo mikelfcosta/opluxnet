@@ -11,7 +11,7 @@
         <lux-hexagon type="faded" shadow="blurred" width="160" height="190"
                      state="category" action="nomes">
           <lux-indicator-right style="top: 15px;">
-            <p>1</p>
+            <p>nomes</p>
           </lux-indicator-right>
           <div class="category-button mid-aligner"
                @mouseenter="icoNames = true" @mouseleave="icoNames = false">
@@ -26,7 +26,7 @@
         <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190"
                      state="category" action="datas">
           <lux-indicator-left style="bottom: 10px;">
-            <p>2</p>
+            <p>datas</p>
           </lux-indicator-left>
           <div class="category-button mid-aligner"
                @mouseenter="icoDates = true" @mouseleave="icoDates = false">
@@ -39,8 +39,8 @@
         </lux-hexagon>
         <lux-hexagon class="mid-aligner" type="faded" shadow="blurred" width="160" height="190"
                      state="category" action="personalidades">
-          <lux-indicator-bottom style="right: -40px;">
-            <p>3</p>
+          <lux-indicator-bottom style="left: 150px;">
+            <p>pessoal</p>
           </lux-indicator-bottom>
           <div class="category-button mid-aligner"
                @mouseenter="icoPersonality = true" @mouseleave="icoPersonality = false">
