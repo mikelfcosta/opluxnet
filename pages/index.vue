@@ -12,17 +12,20 @@
       <span id="play-button"></span>
     </lux-hexagon>
     <lux-hexagon id="hexagon-b" width="360" height="400" type="border-gray" shadow="smaller"></lux-hexagon>
+    <lux-help></lux-help>
   </div>
 </template>
 
 <script>
   import LuxHexagon from '~components/LuxHexagon.vue'
+  import LuxHelp from '~components/LuxHelp.vue'
   export default {
     data () {
       return {}
     },
     components: {
-      LuxHexagon
+      LuxHexagon,
+      LuxHelp
     }
   }
 </script>
