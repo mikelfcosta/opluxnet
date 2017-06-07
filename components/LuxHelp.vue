@@ -6,11 +6,11 @@
       </div>
     </lux-circle-button>
     <ul v-show="active">
-      <li><a href="https://github.com/mikelfcosta/opluxnet">Contribua com o Projeto</a></li>
+      <li><a href="https://github.com/mikelfcosta/opluxnet" target="_blank">Contribua com o Projeto</a></li>
       <li @click="$root.$emit('show::modal','clausula')"">Clásula de Reserva</li>
-      <li><a href="http://www.nan.art.br">Conheça a NaN</a></li>
+      <li><a href="http://www.nan.art.br" target="_blank">Conheça a NaN</a></li>
     </ul>
-    <b-modal id="clausula" title="Clasula de Reserva" :ok-only="true" ok-title="Fechar">
+    <b-modal id="clausula" title="Clasula de Reserva" :hide-footer="true" ok-title="Fechar">
       <p>(Lei 9.610/98 - LEI DE DIREITOS AUTORAIS)</p>
       <p>Este site foi publicado e é mantido pelos discentes do 5 Semestre, do Curso de Graduação em Design Digital, da Universidade Anhembi Morumbi, visando a atender as exigências da disciplina Projeto Interdisciplinar.</p>
       <p>Trata-se de uma publicação temporária para propósitos estritamente acadêmicos e sem fins lucrativos.</p>

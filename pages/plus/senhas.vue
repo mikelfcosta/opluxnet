@@ -8,7 +8,7 @@
     <b-form-input id="password" v-model="password" type="password" @keyup="testPassword"
                   class="password-form"></b-form-input>
     <script src="/js/hsimp.min.js"></script>
-    <div class="result hsimp-level" v-if="time" :class="{ 'good': good }">
+    <div class="pass-result hsimp-level" v-if="time" :class="{ 'good': good }">
       <p>Um computador levaria</p>
       <h2>{{ time }}</h2>
       <p>para descobrir sua senha.</p>
@@ -252,7 +252,7 @@
     font-size: 18px;
   }
 
-  .result {
+  .pass-result {
     width: 100vw;
     color: white;
     font-family: "Open Sans", sans-serif;

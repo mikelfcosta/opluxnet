@@ -33,7 +33,7 @@
                          v-if="!end" :hideOrbs="true"></lux-quiz-progress>
     </div>
     <div v-else>
-      <div class="result" :class="{ 'good': correctAnswers >= 6 }">
+      <div class="crime-result" :class="{ 'good': correctAnswers >= 6 }">
         <h2>
           {{ correctAnswers >= 6 ? 'Quem é o hacker agora?!' : 'Hackeado, de novo! ' }}
         </h2>
@@ -254,7 +254,7 @@
     top: calc(50% - 50px);
   }
 
-  .result {
+  .crime-result {
     width: 100vw;
     color: white;
     font-family: "Open Sans", sans-serif;
